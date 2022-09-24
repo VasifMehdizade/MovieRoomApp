@@ -31,8 +31,43 @@
                     <view key="view" contentMode="scaleToFill" id="XHl-gb-TdF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to watch?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLP-l7-9Eb">
+                                <rect key="frame" x="42" y="112" width="317" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="317" id="vdk-9j-V7T"/>
+                                    <constraint firstAttribute="height" constant="27" id="xEy-W9-bqP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-vA-0zd">
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ocg-OF-xcy">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="320"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Gjk-Yw-Rqx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OEg-W5-ab5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="X8I-vA-0zd" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" id="2U1-vP-pys"/>
+                            <constraint firstItem="X8I-vA-0zd" firstAttribute="top" secondItem="yLP-l7-9Eb" secondAttribute="bottom" id="MXT-ea-hN4"/>
+                            <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" secondItem="X8I-vA-0zd" secondAttribute="trailing" id="O0q-yk-rJx"/>
+                            <constraint firstItem="OEg-W5-ab5" firstAttribute="bottom" secondItem="X8I-vA-0zd" secondAttribute="bottom" id="kUl-on-fT3"/>
+                            <constraint firstItem="yLP-l7-9Eb" firstAttribute="top" secondItem="OEg-W5-ab5" secondAttribute="top" constant="24" id="rNH-Sq-lGI"/>
+                            <constraint firstItem="yLP-l7-9Eb" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="42" id="slP-iY-aGN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hVJ-AK-aoC"/>
                 </viewController>
