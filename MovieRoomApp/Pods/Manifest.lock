@@ -1,0 +1,56 @@
+PODS:
+  - Alamofire (5.6.2)
+  - KeychainAccess (4.2.2)
+  - Localize-Swift (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
+    - Localize-Swift/UIKit (= 3.2.0)
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - Localize-Swift/UIKit (3.2.0):
+    - Localize-Swift/LocalizeSwiftCore
+  - OneSignalXCFramework (3.11.2):
+    - OneSignalXCFramework/OneSignalCore (= 3.11.2)
+    - OneSignalXCFramework/OneSignalExtension (= 3.11.2)
+    - OneSignalXCFramework/OneSignalOutcomes (= 3.11.2)
+  - OneSignalXCFramework/OneSignalCore (3.11.2)
+  - OneSignalXCFramework/OneSignalExtension (3.11.2):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalOutcomes (3.11.2):
+    - OneSignalXCFramework/OneSignalCore
+  - PanModal (1.2.7)
+  - ProgressHUD (13.6)
+  - SDWebImage (5.13.3):
+    - SDWebImage/Core (= 5.13.3)
+  - SDWebImage/Core (5.13.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - KeychainAccess
+  - Localize-Swift (~> 3.2)
+  - OneSignalXCFramework (< 4.0, >= 3.0.0)
+  - PanModal
+  - ProgressHUD
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KeychainAccess
+    - Localize-Swift
+    - OneSignalXCFramework
+    - PanModal
+    - ProgressHUD
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  OneSignalXCFramework: 81ceac017a290f23793443323090cfbe888f74ea
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  ProgressHUD: 4bdaa0d2ddf676b23324b199f9facffb5c3a1620
+  SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
+
+PODFILE CHECKSUM: 116541fb6ee8e299be7723b2f1032139f3625d4c
+
+COCOAPODS: 1.11.3
