@@ -12,6 +12,9 @@
 		2A0C753F28DF3CAC00341121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C753D28DF3CAC00341121 /* Main.storyboard */; };
 		2A0C754128DF3CAD00341121 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C754028DF3CAD00341121 /* Assets.xcassets */; };
 		2A0C754428DF3CAD00341121 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C754228DF3CAD00341121 /* LaunchScreen.storyboard */; };
+		2A0C755028DF3DBE00341121 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C754F28DF3DBE00341121 /* NetworkManager.swift */; };
+		2A0C755228DF3DC900341121 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C755128DF3DC900341121 /* NetworkHelper.swift */; };
+		2A0C755528DF3E4A00341121 /* UIViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C755428DF3E4A00341121 /* UIViewController + Ext.swift */; };
 		8C77ECBD60B616AC6A9D5DE5 /* Pods_MovieRoomApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F29C4BADEA8DB0A3758776BA /* Pods_MovieRoomApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,9 @@
 		2A0C754028DF3CAD00341121 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A0C754328DF3CAD00341121 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A0C754528DF3CAD00341121 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0C754F28DF3DBE00341121 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2A0C755128DF3DC900341121 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		2A0C755428DF3E4A00341121 /* UIViewController + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Ext.swift"; sourceTree = "<group>"; };
 		5BD95BE7B8CD2A69DF497EB6 /* Pods-MovieRoomApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieRoomApp.debug.xcconfig"; path = "Target Support Files/Pods-MovieRoomApp/Pods-MovieRoomApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F29C4BADEA8DB0A3758776BA /* Pods_MovieRoomApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieRoomApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD521DAA41F70A13AE3B5259 /* Pods-MovieRoomApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieRoomApp.release.xcconfig"; path = "Target Support Files/Pods-MovieRoomApp/Pods-MovieRoomApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 		2A0C753628DF3CAC00341121 /* MovieRoomApp */ = {
 			isa = PBXGroup;
 			children = (
+				2A0C754B28DF3D7B00341121 /* NetworkLayer */,
+				2A0C755328DF3E2F00341121 /* Helper */,
+				2A0C755628DF3ED400341121 /* Scene */,
 				2A0C753728DF3CAC00341121 /* AppDelegate.swift */,
 				2A0C753928DF3CAC00341121 /* SceneDelegate.swift */,
 				2A0C753D28DF3CAC00341121 /* Main.storyboard */,
@@ -79,13 +88,84 @@
 			path = MovieRoomApp;
 			sourceTree = "<group>";
 		};
+		2A0C754B28DF3D7B00341121 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C754D28DF3D9400341121 /* Core */,
+				2A0C754C28DF3D8D00341121 /* ManagerFiles */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		2A0C754C28DF3D8D00341121 /* ManagerFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ManagerFiles;
+			sourceTree = "<group>";
+		};
+		2A0C754D28DF3D9400341121 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C754F28DF3DBE00341121 /* NetworkManager.swift */,
+				2A0C755128DF3DC900341121 /* NetworkHelper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2A0C755328DF3E2F00341121 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C755428DF3E4A00341121 /* UIViewController + Ext.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2A0C755628DF3ED400341121 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C755728DF3EDE00341121 /* HomePage */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		2A0C755728DF3EDE00341121 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				2A0C755A28DF3EF300341121 /* Model */,
+				2A0C755828DF3EE600341121 /* View */,
+				2A0C755928DF3EED00341121 /* ViewModel */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		2A0C755828DF3EE600341121 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2A0C755928DF3EED00341121 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2A0C755A28DF3EF300341121 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		93CD0D20C0FB5E45402C600B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				5BD95BE7B8CD2A69DF497EB6 /* Pods-MovieRoomApp.debug.xcconfig */,
 				FD521DAA41F70A13AE3B5259 /* Pods-MovieRoomApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -204,7 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A0C755228DF3DC900341121 /* NetworkHelper.swift in Sources */,
+				2A0C755028DF3DBE00341121 /* NetworkManager.swift in Sources */,
 				2A0C753828DF3CAC00341121 /* AppDelegate.swift in Sources */,
+				2A0C755528DF3E4A00341121 /* UIViewController + Ext.swift in Sources */,
 				2A0C753A28DF3CAC00341121 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
