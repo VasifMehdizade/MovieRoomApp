@@ -33,9 +33,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to watch?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLP-l7-9Eb">
-                                <rect key="frame" x="42" y="112" width="317" height="27"/>
+                                <rect key="frame" x="42" y="112" width="229" height="27"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="317" id="vdk-9j-V7T"/>
                                     <constraint firstAttribute="height" constant="27" id="xEy-W9-bqP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -71,6 +70,7 @@
                             <constraint firstItem="OEg-W5-ab5" firstAttribute="bottom" secondItem="X8I-vA-0zd" secondAttribute="bottom" id="kUl-on-fT3"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="top" secondItem="OEg-W5-ab5" secondAttribute="top" constant="24" id="rNH-Sq-lGI"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="42" id="slP-iY-aGN"/>
+                            <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yLP-l7-9Eb" secondAttribute="trailing" symbolic="YES" id="yzp-yA-gPd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hVJ-AK-aoC"/>

@@ -16,7 +16,7 @@ class HomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-        registerCollectionView()
+//        registerCollectionView()
         configurationViewModel()
         
         self.navigationController?.isNavigationBarHidden = true
@@ -28,7 +28,7 @@ class HomePageController: UIViewController {
     }
     
     func registerCollectionView () {
-        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
+        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
     }
     
     func configurationViewModel() {
@@ -44,7 +44,6 @@ class HomePageController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-
 }
 
 extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -69,7 +68,6 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
 
         case UICollectionView.elementKindSectionHeader:
                 let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath)
-
                 return headerView
         default:
             assert(false, "Unexpected element kind")
