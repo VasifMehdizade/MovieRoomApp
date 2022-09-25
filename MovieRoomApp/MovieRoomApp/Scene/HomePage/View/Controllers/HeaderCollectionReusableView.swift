@@ -8,9 +8,9 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var headerNowPlayingCells: UICollectionView!
+    @IBOutlet weak var collectionViewNowPlaying: UICollectionView!
+    @IBOutlet weak var collectionViewCategories: UICollectionView!
     
-    @IBOutlet weak var headerCategoriesCells: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
