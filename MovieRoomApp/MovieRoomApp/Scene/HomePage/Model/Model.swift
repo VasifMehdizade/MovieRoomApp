@@ -25,7 +25,7 @@ struct Dates: Codable {
 }
 
 // MARK: - Result
-struct Info: Codable {
+struct Info: Codable , MoviesCellProtocol {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
@@ -37,6 +37,10 @@ struct Info: Codable {
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    
+    var MoviePhoto: String {
+        posterPath
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult

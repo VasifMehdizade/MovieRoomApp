@@ -24,6 +24,10 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="U6b-Vx-4bR" id="gTJ-6e-lLh"/>
+                        <outlet property="delegate" destination="U6b-Vx-4bR" id="aFf-9g-DeW"/>
+                    </connections>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7z1-8T-p9R">
                     <rect key="frame" x="0.0" y="249" width="414" height="71"/>
@@ -35,6 +39,10 @@
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="U6b-Vx-4bR" id="0Xl-7p-q0v"/>
+                        <outlet property="delegate" destination="U6b-Vx-4bR" id="zvV-Qs-372"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>

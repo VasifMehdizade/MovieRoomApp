@@ -26,6 +26,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
         return cell
     }
     
@@ -41,10 +42,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource{
             assert(false, "Unexpected element kind")
 
         }
-    
-    
-    
-    
 }
 
 }
