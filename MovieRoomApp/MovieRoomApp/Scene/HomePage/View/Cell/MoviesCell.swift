@@ -9,14 +9,13 @@ import UIKit
 import SDWebImage
 
 protocol MoviesCellProtocol {
-    var MoviePhoto : String { get}
+    var moviePhoto : String { get }
 }
 
 class MoviesCell: UICollectionViewCell {
     @IBOutlet private weak var moviesImage: UIImageView!
     
-    func configure( item : MoviesCellProtocol) {
-        moviesImage.sd_setImage(with: URL(string: item.MoviePhoto))
+    func configure(item : MoviesCellProtocol) {
+        moviesImage.sd_setImage(with: URL(string: item.moviePhoto))
     }
-
 }

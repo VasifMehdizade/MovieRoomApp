@@ -1,25 +1,25 @@
 //
-//  HomePageViewModel.swift
+//  SearchViewModel.swift
 //  MovieRoomApp
 //
-//  Created by Vasif Mehdi on 25.09.22.
+//  Created by Vasif Mehdi on 26.09.22.
 //
 
 import Foundation
 
-class HomePageViewModel {
-    var moviesInfos = [Info]()
+class SearchViewModel {
+    var searchResults = [SearchResult]()
 
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
     
     
-    func getMovies () {
-        HomePageManager.shared.getMovies { items, errorMessage in
+    func getSearchResults (text : String) {
+        SearchManager.shared.searchResults(text: text) { items, errorMessage in
             if let errorMessage = errorMessage {
                 self.errorCallback?(errorMessage)
             } else if let docs = items?.results {
-                self.moviesInfos = docs
+                self.searchResults = docs
                 self.successCallback?()
             }
         }

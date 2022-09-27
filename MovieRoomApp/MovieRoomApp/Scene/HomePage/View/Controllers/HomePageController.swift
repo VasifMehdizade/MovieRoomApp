@@ -8,7 +8,7 @@
 import UIKit
 
 class HomePageController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel = HomePageViewModel()
@@ -16,11 +16,11 @@ class HomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-//        registerCollectionView()
+        registerCollectionView()
         configurationViewModel()
         
         self.navigationController?.isNavigationBarHidden = true
-
+        
     }
     
     func registerCell() {
@@ -28,12 +28,12 @@ class HomePageController: UIViewController {
     }
     
     func registerCollectionView () {
-        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
+        collectionView.register(UINib(nibName: "\(HeaderCollectionReusableView.self)", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(HeaderCollectionReusableView.self)")
     }
     
     func configurationViewModel() {
         showLoader()
-        viewModel.getMoviesInfos()
+        viewModel.getMovies()
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -59,18 +59,22 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 100)
+        CGSize(width: collectionView.frame.width/3 - 10, height: 146)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        switch kind {
 
+        switch kind {
         case UICollectionView.elementKindSectionHeader:
-                let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath)
-                return headerView
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath)
+            return headerView
         default:
             assert(false, "Unexpected element kind")
         }
-}
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        CGSize(width: collectionView.frame.width, height: 321
+        )
+    }
 }
