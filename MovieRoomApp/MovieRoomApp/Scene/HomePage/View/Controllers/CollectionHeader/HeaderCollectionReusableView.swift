@@ -15,10 +15,25 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configurationViewModel()
     }
     
     override func layoutSubviews() {
         collectionViewNowPlaying.register(UINib(nibName: "MoviesCell", bundle: nil), forCellWithReuseIdentifier: "MoviesCell")
+    }
+    
+    func configurationViewModel() {
+        showLoader()
+        viewModel.getMovies()
+        viewModel.errorCallback = { message in
+            self.dismissLoader()
+            self.showAlert(message: message) {}
+        }
+        
+        viewModel.successCallback = {
+            self.dismissLoader()
+            self.collectionViewNowPlaying.reloadData()
+        }
     }
 }
 
@@ -31,11 +46,14 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             if (collectionView == collectionViewNowPlaying)  {
                 return viewModel.moviesInfos.count
         }
         return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width/2 - 20, height: 180)
     }
 }

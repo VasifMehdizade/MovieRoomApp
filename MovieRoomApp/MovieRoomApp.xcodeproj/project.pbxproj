@@ -196,12 +196,20 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2A35654E28E436A5003AE759 /* CollectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				2A3F0B5328DF4B7100947EE0 /* HeaderCollectionReusableView.swift */,
+				2A3F0B5428DF4B7100947EE0 /* HeaderCollectionReusableView.xib */,
+			);
+			path = CollectionHeader;
+			sourceTree = "<group>";
+		};
 		2A3F0B4B28DF495C00947EE0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2A3F0B4328DF402E00947EE0 /* HomePageController.swift */,
-				2A3F0B5328DF4B7100947EE0 /* HeaderCollectionReusableView.swift */,
-				2A3F0B5428DF4B7100947EE0 /* HeaderCollectionReusableView.xib */,
+				2A35654E28E436A5003AE759 /* CollectionHeader */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

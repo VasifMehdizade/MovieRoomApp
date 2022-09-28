@@ -81,7 +81,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-vA-0zd">
-                                <rect key="frame" x="24" y="139" width="366" height="674"/>
+                                <rect key="frame" x="12" y="139" width="390" height="674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ocg-OF-xcy">
                                     <size key="itemSize" width="128" height="128"/>
@@ -99,9 +99,9 @@
                         <viewLayoutGuide key="safeArea" id="OEg-W5-ab5"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="X8I-vA-0zd" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="24" id="2U1-vP-pys"/>
+                            <constraint firstItem="X8I-vA-0zd" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="12" id="2U1-vP-pys"/>
                             <constraint firstItem="X8I-vA-0zd" firstAttribute="top" secondItem="yLP-l7-9Eb" secondAttribute="bottom" id="MXT-ea-hN4"/>
-                            <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" secondItem="X8I-vA-0zd" secondAttribute="trailing" constant="24" id="O0q-yk-rJx"/>
+                            <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" secondItem="X8I-vA-0zd" secondAttribute="trailing" constant="12" id="O0q-yk-rJx"/>
                             <constraint firstItem="OEg-W5-ab5" firstAttribute="bottom" secondItem="X8I-vA-0zd" secondAttribute="bottom" id="kUl-on-fT3"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="top" secondItem="OEg-W5-ab5" secondAttribute="top" constant="24" id="rNH-Sq-lGI"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="42" id="slP-iY-aGN"/>
