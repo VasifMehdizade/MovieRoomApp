@@ -12,6 +12,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var collectionViewCategories: UICollectionView!
     
     var viewModel = HomePageViewModel()
+    
+    var categories = ["Now Playing", "Top rated", "Upcoming", "Popular", "Latest"]
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +22,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     override func layoutSubviews() {
         collectionViewNowPlaying.register(UINib(nibName: "MoviesCell", bundle: nil), forCellWithReuseIdentifier: "MoviesCell")
+        collectionViewCategories.register(UINib(nibName: "CategoriesCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCell")
     }
     
     func configurationViewModel() {
@@ -39,18 +42,23 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 
 extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
+        let nowPlayingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
         if (collectionView == collectionViewNowPlaying)  {
-            cell.configure(item: viewModel.moviesInfos[indexPath.item])
+            nowPlayingCell.configure(item: viewModel.moviesInfos[indexPath.item])
     }
-        return cell
+        else {
+            let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
+            categoriesCell.categoriesLabel.text = categories[indexPath.row]
+            return categoriesCell
+    }
+        return nowPlayingCell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             if (collectionView == collectionViewNowPlaying)  {
                 return viewModel.moviesInfos.count
         }
-        return 1
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

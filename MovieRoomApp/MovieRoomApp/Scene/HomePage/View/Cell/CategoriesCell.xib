@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoriesCell" customModule="MovieRoomApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-L7-8gj">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhS-gf-wet">
+                        <rect key="frame" x="39" y="49.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="rhS-gf-wet" firstAttribute="centerY" secondItem="WdW-L7-8gj" secondAttribute="centerY" id="7Vv-aE-hoV"/>
+                <constraint firstItem="rhS-gf-wet" firstAttribute="centerX" secondItem="WdW-L7-8gj" secondAttribute="centerX" id="9T6-F2-I7o"/>
+                <constraint firstAttribute="bottom" secondItem="WdW-L7-8gj" secondAttribute="bottom" id="H9X-6n-vK7"/>
+                <constraint firstItem="WdW-L7-8gj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HmI-7o-whV"/>
+                <constraint firstItem="WdW-L7-8gj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fBS-py-oqj"/>
+                <constraint firstAttribute="trailing" secondItem="WdW-L7-8gj" secondAttribute="trailing" id="k3c-Lg-cSs"/>
+            </constraints>
+            <size key="customSize" width="97" height="104"/>
+            <connections>
+                <outlet property="categoriesLabel" destination="rhS-gf-wet" id="XEB-zb-5dZ"/>
+                <outlet property="uiView" destination="WdW-L7-8gj" id="cMV-er-i5C"/>
+            </connections>
+            <point key="canvasLocation" x="186.23188405797103" y="8.7053571428571423"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
