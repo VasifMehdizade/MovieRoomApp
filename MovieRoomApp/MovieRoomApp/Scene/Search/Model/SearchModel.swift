@@ -25,7 +25,8 @@ struct SearchResult: Codable, SearchViewCellProtocol {
     }
     
     var searchImage: String{
-        posterPath
+        "https://image.tmdb.org/t/p/original\(posterPath)"
+
     }
     
     let adult: Bool

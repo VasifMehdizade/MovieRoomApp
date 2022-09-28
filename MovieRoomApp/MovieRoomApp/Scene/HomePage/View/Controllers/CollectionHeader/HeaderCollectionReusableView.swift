@@ -18,6 +18,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         configurationViewModel()
+        layoutSubviews()
     }
     
     override func layoutSubviews() {
