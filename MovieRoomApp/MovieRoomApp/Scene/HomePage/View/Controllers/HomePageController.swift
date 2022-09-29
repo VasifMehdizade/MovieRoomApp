@@ -9,6 +9,7 @@ import UIKit
 
 class HomePageController: UIViewController, UITabBarControllerDelegate {
     
+    @IBOutlet weak var navigationLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel = HomePageViewModel()
@@ -18,10 +19,9 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
         registerCell()
         registerCollectionView()
         configurationViewModel()
-//        createTabBarController()
         
         self.navigationController?.isNavigationBarHidden = true
-
+        navigationLabel.textColor = UIColor(red: 236, green: 236, blue: 236, alpha: CGFloat(1.0))
     }
     
     func registerCell() {
@@ -67,7 +67,8 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
 
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath)
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
+            headerView.config()
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -75,8 +76,7 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 387
-        )
+        CGSize(width: collectionView.frame.width, height: 387)
     }
 }
 

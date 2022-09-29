@@ -29,6 +29,7 @@
 		2AADE3EB28E1E86900EAE4C5 /* SearchViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AADE3E928E1E86900EAE4C5 /* SearchViewCell.xib */; };
 		2AADE3ED28E20F7B00EAE4C5 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADE3EC28E20F7B00EAE4C5 /* SearchManager.swift */; };
 		2AADE3EF28E2141D00EAE4C5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AADE3EE28E2141D00EAE4C5 /* SearchController.swift */; };
+		2AC4B07228E5BA3A00CB9F4F /* WatchListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4B07128E5BA3A00CB9F4F /* WatchListController.swift */; };
 		2AD905B028E46E8F0024376A /* CategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD905AE28E46E8F0024376A /* CategoriesCell.swift */; };
 		2AD905B128E46E8F0024376A /* CategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD905AF28E46E8F0024376A /* CategoriesCell.xib */; };
 		2AD905B328E5ADD00024376A /* UICollectionReusableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD905B228E5ADD00024376A /* UICollectionReusableView + Ext.swift */; };
@@ -60,6 +61,7 @@
 		2AADE3E928E1E86900EAE4C5 /* SearchViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewCell.xib; sourceTree = "<group>"; };
 		2AADE3EC28E20F7B00EAE4C5 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		2AADE3EE28E2141D00EAE4C5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		2AC4B07128E5BA3A00CB9F4F /* WatchListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListController.swift; sourceTree = "<group>"; };
 		2AD905AE28E46E8F0024376A /* CategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCell.swift; sourceTree = "<group>"; };
 		2AD905AF28E46E8F0024376A /* CategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesCell.xib; sourceTree = "<group>"; };
 		2AD905B228E5ADD00024376A /* UICollectionReusableView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView + Ext.swift"; sourceTree = "<group>"; };
@@ -288,6 +290,8 @@
 		2AADE3E628E1E84B00EAE4C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2AD905B428E5B9EC0024376A /* Controllers */,
+				2AD905B528E5B9F60024376A /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +301,21 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2AD905B428E5B9EC0024376A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2AC4B07128E5BA3A00CB9F4F /* WatchListController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2AD905B528E5B9F60024376A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		93CD0D20C0FB5E45402C600B /* Pods */ = {
@@ -430,6 +449,7 @@
 				2AADE3EA28E1E86900EAE4C5 /* SearchViewCell.swift in Sources */,
 				2A0C755228DF3DC900341121 /* NetworkHelper.swift in Sources */,
 				2A3F0B5528DF4B7100947EE0 /* HeaderCollectionReusableView.swift in Sources */,
+				2AC4B07228E5BA3A00CB9F4F /* WatchListController.swift in Sources */,
 				2A35654328E22650003AE759 /* SearchModel.swift in Sources */,
 				2AADE3EF28E2141D00EAE4C5 /* SearchController.swift in Sources */,
 				2A3F0B4628DF409600947EE0 /* HomePageManager.swift in Sources */,

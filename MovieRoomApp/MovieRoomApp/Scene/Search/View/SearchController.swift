@@ -18,15 +18,20 @@ class SearchController: UIViewController {
         super.viewDidLoad()
         registerCell()
         configurationViewModel()
+        configureNavigation()
 
     }
     @IBAction func searchTextFieldAction(_ sender: UITextField) {
         viewModel.getSearchResults(text: sender.text ?? "")
-
     }
     
     func registerCell() {
         collectionView.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellWithReuseIdentifier: "SearchViewCell")
+    }
+    
+    func configureNavigation() {
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     
     func configurationViewModel() {
@@ -49,14 +54,12 @@ extension SearchController : UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.searchResults.count
-
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchViewCell", for: indexPath) as! SearchViewCell
         cell.configure(item: viewModel.searchResults[indexPath.item])
         return cell
- 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

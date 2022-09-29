@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,38 +16,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-L7-8gj">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhS-gf-wet">
-                        <rect key="frame" x="39" y="49.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Kr-9g-9iH">
+                        <rect key="frame" x="0.0" y="49.5" width="120" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="rhS-gf-wet" firstAttribute="centerY" secondItem="WdW-L7-8gj" secondAttribute="centerY" id="7Vv-aE-hoV"/>
-                <constraint firstItem="rhS-gf-wet" firstAttribute="centerX" secondItem="WdW-L7-8gj" secondAttribute="centerX" id="9T6-F2-I7o"/>
-                <constraint firstAttribute="bottom" secondItem="WdW-L7-8gj" secondAttribute="bottom" id="H9X-6n-vK7"/>
-                <constraint firstItem="WdW-L7-8gj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HmI-7o-whV"/>
-                <constraint firstItem="WdW-L7-8gj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fBS-py-oqj"/>
-                <constraint firstAttribute="trailing" secondItem="WdW-L7-8gj" secondAttribute="trailing" id="k3c-Lg-cSs"/>
+                <constraint firstItem="4Kr-9g-9iH" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="HyR-oc-1IK"/>
+                <constraint firstItem="4Kr-9g-9iH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="s5t-dH-qIt"/>
+                <constraint firstItem="4Kr-9g-9iH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="uN7-5x-0Av"/>
             </constraints>
             <size key="customSize" width="97" height="104"/>
             <connections>
-                <outlet property="categoriesLabel" destination="rhS-gf-wet" id="XEB-zb-5dZ"/>
-                <outlet property="uiView" destination="WdW-L7-8gj" id="cMV-er-i5C"/>
+                <outlet property="categoriesLabel" destination="4Kr-9g-9iH" id="VHa-Rb-tJC"/>
             </connections>
-            <point key="canvasLocation" x="186.23188405797103" y="8.7053571428571423"/>
+            <point key="canvasLocation" x="185.50724637681162" y="8.7053571428571423"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

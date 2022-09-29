@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Controller-->
+        <!--Search-->
         <scene sceneID="8gu-Iz-m7F">
             <objects>
                 <viewController id="gnl-Y9-9hk" customClass="SearchController" customModule="MovieRoomApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,6 +34,7 @@
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6h-fc-sj8">
                                 <rect key="frame" x="20" y="88" width="374" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -43,6 +44,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oCe-J9-wC4"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="K0B-RP-Ngn" firstAttribute="top" secondItem="r6h-fc-sj8" secondAttribute="bottom" constant="16" id="0P9-Ay-8LT"/>
                             <constraint firstItem="r6h-fc-sj8" firstAttribute="top" secondItem="oCe-J9-wC4" secondAttribute="top" id="5qO-sd-izl"/>
@@ -54,7 +56,7 @@
                             <constraint firstItem="K0B-RP-Ngn" firstAttribute="bottom" secondItem="oCe-J9-wC4" secondAttribute="bottom" id="ukI-QZ-jiz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hFk-Am-TEM"/>
+                    <navigationItem key="navigationItem" title="Search" id="hFk-Am-TEM"/>
                     <connections>
                         <outlet property="collectionView" destination="K0B-RP-Ngn" id="kun-ow-jKL"/>
                         <outlet property="searchTextField" destination="r6h-fc-sj8" id="Xca-Pc-zLF"/>
@@ -112,6 +114,7 @@
                     <navigationItem key="navigationItem" id="hVJ-AK-aoC"/>
                     <connections>
                         <outlet property="collectionView" destination="X8I-vA-0zd" id="fNz-XT-ReW"/>
+                        <outlet property="navigationLabel" destination="yLP-l7-9Eb" id="KFK-jd-ud7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4I-Yc-Mtb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="-333.33333333333337" y="337.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Watch List-->
         <scene sceneID="6xY-Zp-jfy">
             <objects>
                 <viewController id="1yv-We-ccw" sceneMemberID="viewController">
@@ -184,9 +187,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="2P7-On-v6M"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Djb-3e-Rbe"/>
+                    <navigationItem key="navigationItem" title="Watch List" id="Djb-3e-Rbe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7z-Oj-6yi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,8 +222,8 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

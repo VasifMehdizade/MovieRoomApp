@@ -14,19 +14,17 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     var viewModel = HomePageViewModel()
     
     var categories = ["Now Playing", "Top rated", "Upcoming", "Popular", "Latest"]
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configurationViewModel()
-        layoutSubviews()
-    }
     
     override func layoutSubviews() {
         collectionViewNowPlaying.register(UINib(nibName: "MoviesCell", bundle: nil), forCellWithReuseIdentifier: "MoviesCell")
         collectionViewCategories.register(UINib(nibName: "CategoriesCell", bundle: nil), forCellWithReuseIdentifier: "CategoriesCell")
     }
     
-    func configurationViewModel() {
+    func config() {
+        configurationViewModel()
+    }
+    
+    private func configurationViewModel() {
         showLoader()
         viewModel.getMovies()
         viewModel.errorCallback = { message in
@@ -42,27 +40,33 @@ class HeaderCollectionReusableView: UICollectionReusableView {
 }
 
 extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let nowPlayingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
-        if (collectionView == collectionViewNowPlaying)  {
-            nowPlayingCell.configure(item: viewModel.moviesInfos[indexPath.item])
-    }
-        else {
-            let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
-            categoriesCell.categoriesLabel.text = categories[indexPath.row]
-            return categoriesCell
-    }
-        return nowPlayingCell
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            if (collectionView == collectionViewNowPlaying)  {
-                return viewModel.moviesInfos.count
+        if (collectionView == collectionViewNowPlaying)  {
+            return viewModel.moviesInfos.count
         }
         return categories.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if (collectionView == collectionViewNowPlaying)  {
+            let nowPlayingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
+            nowPlayingCell.configure(item: viewModel.moviesInfos[indexPath.item])
+            return nowPlayingCell
+        } else {
+            let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
+            categoriesCell.categoriesLabel.text = categories[indexPath.row]
+            return categoriesCell
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width/2 - 20, height: 230)
+        if collectionView == collectionViewNowPlaying {
+            // 210 - 144
+            // width - x
+            let height = collectionView.frame.height * 210 / 144 - 10
+            let width = collectionView.frame.height * 144 / 210 - 10
+            return CGSize(width: width, height: height)
+        }
+        return CGSize(width: collectionView.frame.width/2 - 20, height: 230)
     }
 }
