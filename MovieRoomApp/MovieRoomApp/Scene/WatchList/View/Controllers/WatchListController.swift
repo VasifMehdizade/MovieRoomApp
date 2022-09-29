@@ -11,11 +11,12 @@ class WatchListController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureNavigation()
     }
     
     func configureNavigation() {
-        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.red]
+        let attributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
     

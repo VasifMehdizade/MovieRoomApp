@@ -21,9 +21,10 @@ class SearchController: UIViewController {
         configureNavigation()
 
     }
-    @IBAction func searchTextFieldAction(_ sender: UITextField) {
-        viewModel.getSearchResults(text: sender.text ?? "")
-    }
+    
+//    @IBAction func searchTextFieldAction(_ sender: UITextField) {
+//        viewModel.getSearchResults(text: sender.text ?? "")
+//    }
     
     func registerCell() {
         collectionView.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellWithReuseIdentifier: "SearchViewCell")
@@ -65,5 +66,12 @@ extension SearchController : UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 220)
     }
-    
+}
+
+extension SearchController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        viewModel.getSearchResults(text: textField.text ?? "")
+        textField.resignFirstResponder()
+        return true
+    }
 }
