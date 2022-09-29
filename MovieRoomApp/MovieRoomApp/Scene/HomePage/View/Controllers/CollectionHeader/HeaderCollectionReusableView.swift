@@ -8,8 +8,8 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet weak var collectionViewNowPlaying: UICollectionView!
-    @IBOutlet weak var collectionViewCategories: UICollectionView!
+    @IBOutlet private weak var collectionViewNowPlaying: UICollectionView!
+    @IBOutlet private weak var collectionViewCategories: UICollectionView!
     
     var viewModel = HomePageViewModel()
     

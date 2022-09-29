@@ -8,8 +8,8 @@
 import UIKit
 
 class CategoriesCell: UICollectionViewCell {
-    @IBOutlet weak var uiView: UIView!
-    @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet private weak var uiView: UIView!
+    @IBOutlet private weak var categoriesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

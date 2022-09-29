@@ -22,16 +22,6 @@ extension UIViewController {
     }
 }
 
-extension UICollectionReusableView {
-    func showLoader() {
-        ProgressHUD.show()
-    }
-    
-    func dismissLoader() {
-        ProgressHUD.dismiss()
-    }
-}
-
 //MARK: Alert
 extension UIViewController{
     func showAlert(title: String = "", message : String = "" , okHandler : @escaping (()->())) {

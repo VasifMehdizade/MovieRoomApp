@@ -14,9 +14,9 @@ protocol SearchViewCellProtocol {
 }
 
 class SearchViewCell: UICollectionViewCell {
-    @IBOutlet weak var searchCellImage: UIImageView!
-    @IBOutlet weak var searchCellView: UIView!
-    @IBOutlet weak var searchCellLabel: UILabel!
+    @IBOutlet private weak var searchCellImage: UIImageView!
+    @IBOutlet private weak var searchCellView: UIView!
+    @IBOutlet private weak var searchCellLabel: UILabel!
     
     func configure( item : SearchViewCellProtocol) {
         searchCellImage.sd_setImage(with: URL(string: item.searchImage))

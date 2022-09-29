@@ -9,8 +9,8 @@ import UIKit
 
 class SearchController: UIViewController {
 
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel = SearchViewModel()
 

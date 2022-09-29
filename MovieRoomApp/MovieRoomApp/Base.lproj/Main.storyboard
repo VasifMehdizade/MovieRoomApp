@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -81,7 +82,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-vA-0zd">
-                                <rect key="frame" x="12" y="139" width="390" height="674"/>
+                                <rect key="frame" x="12" y="139" width="390" height="654"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ocg-OF-xcy">
                                     <size key="itemSize" width="128" height="128"/>
@@ -102,7 +103,7 @@
                             <constraint firstItem="X8I-vA-0zd" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="12" id="2U1-vP-pys"/>
                             <constraint firstItem="X8I-vA-0zd" firstAttribute="top" secondItem="yLP-l7-9Eb" secondAttribute="bottom" id="MXT-ea-hN4"/>
                             <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" secondItem="X8I-vA-0zd" secondAttribute="trailing" constant="12" id="O0q-yk-rJx"/>
-                            <constraint firstItem="OEg-W5-ab5" firstAttribute="bottom" secondItem="X8I-vA-0zd" secondAttribute="bottom" id="kUl-on-fT3"/>
+                            <constraint firstItem="OEg-W5-ab5" firstAttribute="bottom" secondItem="X8I-vA-0zd" secondAttribute="bottom" constant="20" id="kUl-on-fT3"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="top" secondItem="OEg-W5-ab5" secondAttribute="top" constant="24" id="rNH-Sq-lGI"/>
                             <constraint firstItem="yLP-l7-9Eb" firstAttribute="leading" secondItem="OEg-W5-ab5" secondAttribute="leading" constant="42" id="slP-iY-aGN"/>
                             <constraint firstItem="OEg-W5-ab5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yLP-l7-9Eb" secondAttribute="trailing" symbolic="YES" id="yzp-yA-gPd"/>
@@ -125,6 +126,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="Kiv-Fa-Jdh" kind="relationship" relationship="viewControllers" id="WQ5-eb-P4K"/>
@@ -136,11 +138,11 @@
             </objects>
             <point key="canvasLocation" x="-1221" y="-123"/>
         </scene>
-        <!--home-->
+        <!--Home-->
         <scene sceneID="wbP-W3-fcd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kiv-Fa-Jdh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" id="XdH-z6-2rc"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="XdH-z6-2rc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fIt-jC-iSt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -159,7 +161,7 @@
         <scene sceneID="9am-gq-OvG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zPl-re-DYq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="xLc-aK-DpS"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="xLc-aK-DpS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="C3w-9m-SX9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -194,7 +196,7 @@
         <scene sceneID="Qv0-XR-GgM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hSC-6Z-IZz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watch List" id="TxA-IX-qBI"/>
+                    <tabBarItem key="tabBarItem" title="Watch List" image="Save" id="TxA-IX-qBI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wP9-GN-Oof">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -211,6 +213,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home" width="20" height="22"/>
+        <image name="Save" width="22" height="24"/>
+        <image name="Search" width="22" height="24"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

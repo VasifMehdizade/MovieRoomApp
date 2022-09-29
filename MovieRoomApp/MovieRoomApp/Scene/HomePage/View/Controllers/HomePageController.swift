@@ -7,9 +7,9 @@
 
 import UIKit
 
-class HomePageController: UIViewController {
+class HomePageController: UIViewController, UITabBarControllerDelegate {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel = HomePageViewModel()
     
@@ -18,9 +18,10 @@ class HomePageController: UIViewController {
         registerCell()
         registerCollectionView()
         configurationViewModel()
+//        createTabBarController()
         
         self.navigationController?.isNavigationBarHidden = true
-        
+
     }
     
     func registerCell() {
@@ -78,3 +79,4 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
         )
     }
 }
+
