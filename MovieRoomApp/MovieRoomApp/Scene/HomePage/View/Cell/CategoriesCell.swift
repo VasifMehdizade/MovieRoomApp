@@ -8,7 +8,6 @@
 import UIKit
 
 class CategoriesCell: UICollectionViewCell {
-    @IBOutlet private weak var uiView: UIView!
     @IBOutlet  weak var categoriesLabel: UILabel!
     
     override func awakeFromNib() {

@@ -7,13 +7,13 @@ import Foundation
 
 // MARK: - Movies
 struct Movies: Codable {
-    let dates: Dates
+//    let dates: Dates
     let page: Int
     let results: [Info]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
-        case dates, page, results
+        case page, results
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
@@ -30,7 +30,7 @@ struct Info: Codable , MoviesCellProtocol {
     let backdropPath: String
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: OriginalLanguage
+    let originalLanguage: String
     let originalTitle, overview: String
     let popularity: Double
     let posterPath, releaseDate, title: String
@@ -56,10 +56,4 @@ struct Info: Codable , MoviesCellProtocol {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
-enum OriginalLanguage: String, Codable {
-    case en = "en"
-    case ja = "ja"
-    case ru = "ru"
 }

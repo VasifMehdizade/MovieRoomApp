@@ -34,6 +34,7 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
     
     func configurationViewModel() {
         showLoader()
+        viewModel.getGenres(genre: "top_rated")
         viewModel.getMovies()
         viewModel.errorCallback = { message in
             self.dismissLoader()
@@ -51,12 +52,12 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
-        cell.configure(item: viewModel.moviesInfos[indexPath.item])
+        cell.configure(item: viewModel.genreMovies[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.moviesInfos.count
+        viewModel.genreMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -69,6 +70,9 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
             headerView.config()
+            headerView.categorySelectionCallBack = { genre in
+                self.viewModel.getGenres(genre: genre)
+            }
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -79,4 +83,3 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
         CGSize(width: collectionView.frame.width, height: 387)
     }
 }
-

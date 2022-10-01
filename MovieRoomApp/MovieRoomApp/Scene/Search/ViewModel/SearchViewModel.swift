@@ -13,7 +13,6 @@ class SearchViewModel {
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
     
-    
     func getSearchResults (text : String) {
         SearchManager.shared.searchResults(text: text) { items, errorMessage in
             if let errorMessage = errorMessage {

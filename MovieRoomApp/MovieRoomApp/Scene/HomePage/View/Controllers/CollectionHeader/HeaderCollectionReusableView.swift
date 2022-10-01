@@ -13,7 +13,11 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     var viewModel = HomePageViewModel()
     
-    var categories = ["Now Playing", "Top rated", "Upcoming", "Popular", "Latest"]
+    var categorySelectionCallBack: ((String)->())?
+    
+    var categories = [GenresModel(title: "Top rated", key: "top_rated"),
+                      GenresModel(title: "Upcoming", key: "upcoming"),
+                      GenresModel(title: "Popular", key: "popular")]
     
     override func layoutSubviews() {
         collectionViewNowPlaying.register(UINib(nibName: "MoviesCell", bundle: nil), forCellWithReuseIdentifier: "MoviesCell")
@@ -54,19 +58,25 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
             return nowPlayingCell
         } else {
             let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
-            categoriesCell.categoriesLabel.text = categories[indexPath.row]
+            categoriesCell.categoriesLabel.text = categories[indexPath.row].title
             return categoriesCell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == collectionViewNowPlaying {
-            // 210 - 144
-            // width - x
-            let height = collectionView.frame.height * 210 / 144 - 10
-            let width = collectionView.frame.height * 144 / 210 - 10
-            return CGSize(width: width, height: height)
-        }
+//        if collectionView == collectionViewNowPlaying {
+//            // 210 - 144
+//            // width - x
+//            let height = collectionView.frame.height * 210 / 144 - 10
+//            let width = collectionView.frame.height * 144 / 210 - 10
+//            return CGSize(width: width, height: height)
+//        }
         return CGSize(width: collectionView.frame.width/2 - 20, height: 230)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == collectionViewCategories {
+            categorySelectionCallBack?(categories[indexPath.item].key)
+        }
     }
 }

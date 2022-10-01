@@ -9,6 +9,7 @@ import Foundation
 
 class HomePageViewModel {
     var moviesInfos = [Info]()
+    var genreMovies = [Info]()
 
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
@@ -24,4 +25,16 @@ class HomePageViewModel {
             }
         }
     }
+    
+    func getGenres(genre : String) {
+        HomePageManager.shared.getGenres(genres: genre) { items, errorMessage in
+            if let errorMessage = errorMessage {
+                self.errorCallback?(errorMessage)
+            } else if let docs = items?.results {
+                self.genreMovies = docs
+                self.successCallback?()
+            }
+        }
+    }
+    
 }
