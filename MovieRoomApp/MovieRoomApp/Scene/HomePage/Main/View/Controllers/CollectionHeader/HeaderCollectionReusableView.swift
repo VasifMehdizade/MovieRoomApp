@@ -15,7 +15,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     var categorySelectionCallBack: ((String)->())?
     var selectionIdCallBack: ((Int)->())?
-
     
     var categories = [GenresModel(title: "Top rated", key: "top_rated"),
                       GenresModel(title: "Upcoming", key: "upcoming"),
@@ -77,10 +76,14 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+        
         if collectionView == collectionViewCategories {
             categorySelectionCallBack?(categories[indexPath.item].key)
         } else {
             selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id)
         }
+        
     }
 }

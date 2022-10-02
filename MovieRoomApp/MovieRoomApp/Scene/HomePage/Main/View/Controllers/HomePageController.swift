@@ -14,6 +14,8 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
     
     var viewModel = HomePageViewModel()
     
+    var selectionIdCallBack: ((Int)->())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
@@ -81,6 +83,16 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 387)
+    }
+    
+    func collectionView(_ collectionView1: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView1 == collectionView {
+            selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id)
+        }
+        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+        navigationController?.show(controller, sender: nil)
     }
     
 }

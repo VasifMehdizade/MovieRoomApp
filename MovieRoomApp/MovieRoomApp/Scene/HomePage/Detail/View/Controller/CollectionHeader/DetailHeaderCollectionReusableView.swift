@@ -25,7 +25,6 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
         super.awakeFromNib()
         
         descriptionLabel.text = "Description"
-        
     }
     
     override func layoutSubviews() {
@@ -50,7 +49,6 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
         }
     }
     
-    
 }
 
 extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -64,6 +62,5 @@ extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICol
         cell.configure(item: viewModel.moviesDetails?.genres[indexPath.row].name as! GenresCellProtocol)
         return cell
     }
-
-
+    
 }
