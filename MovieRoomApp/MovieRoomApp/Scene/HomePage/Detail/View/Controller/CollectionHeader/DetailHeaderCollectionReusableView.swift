@@ -24,6 +24,8 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        descriptionLabel.text = "Description"
+        
     }
     
     override func layoutSubviews() {

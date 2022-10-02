@@ -12,7 +12,8 @@ struct Cast: Codable {
 }
 
 // MARK: - CastElement
-struct CastElement: Codable {
+struct CastElement: Codable, CastCellProtocol {
+    
     let adult: Bool
     let gender, id: Int
     let knownForDepartment, name, originalName: String
@@ -23,6 +24,14 @@ struct CastElement: Codable {
     let creditID: String
     let order: Int?
     let department, job: String?
+    
+    var cellLabel: String{
+        name
+    }
+    
+    var cellImage: String{
+        "https://image.tmdb.org/t/p/original/" + (profilePath ?? "")
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult, gender, id

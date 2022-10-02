@@ -10,6 +10,7 @@ import Foundation
 class DetailViewModel {
     var moviesDetails : Detail?
     var moviesCasts = [CastElement]()
+    var similarMovie = [Conclusion]()
 
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
@@ -36,4 +37,17 @@ class DetailViewModel {
             }
         }
     }
+    
+    func similarMovies(id : Int) {
+        DetailManager.shared.similarMovies(id: id) { items, errorMessage in
+            if let errorMessage = errorMessage {
+                self.errorCallback?(errorMessage)
+            } else if let docs = items?.results {
+                self.similarMovie = docs
+                self.successCallback?()
+            }
+        }
+    }
+    
+    
 }
