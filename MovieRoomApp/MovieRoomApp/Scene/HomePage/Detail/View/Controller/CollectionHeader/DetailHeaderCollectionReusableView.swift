@@ -10,6 +10,7 @@ import WebKit
 
 class DetailHeaderCollectionReusableView: UICollectionReusableView {
     
+    var viewModel = DetailViewModel()
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bookmarkIcon: UIButton!
@@ -29,36 +30,38 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
     }
     
-//    func config() {
-//        configurationViewModel()
-//    }
-//
-//    private func configurationViewModel() {
-//        showLoader()
-//        viewModel.getMovies()
-//        viewModel.errorCallback = { message in
-//            self.dismissLoader()
-//            self.showAlert(message: message) {}
-//        }
-//
-//        viewModel.successCallback = {
-//            self.dismissLoader()
-//            self.collectionViewNowPlaying.reloadData()
-//        }
-//    }
+    func config() {
+        configurationViewModel()
+    }
+
+    private func configurationViewModel() {
+        showLoader()
+//        viewModel.moviesCasts()
+        viewModel.errorCallback = { message in
+            self.dismissLoader()
+            self.showAlert(message: message) {}
+        }
+
+        viewModel.successCallback = {
+            self.dismissLoader()
+            self.genresCollectionView.reloadData()
+        }
+    }
     
     
 }
 
-//extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//    
-//    
-//}
+extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.moviesCasts.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as! GenresCell
+        cell.configure(item: viewModel.moviesDetails?.genres[indexPath.row].name as! GenresCellProtocol)
+        return cell
+    }
+
+
+}

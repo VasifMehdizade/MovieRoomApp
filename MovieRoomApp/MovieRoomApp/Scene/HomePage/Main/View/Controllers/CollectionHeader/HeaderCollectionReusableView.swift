@@ -14,6 +14,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     var viewModel = HomePageViewModel()
     
     var categorySelectionCallBack: ((String)->())?
+    var selectionIdCallBack: ((Int)->())?
+
     
     var categories = [GenresModel(title: "Top rated", key: "top_rated"),
                       GenresModel(title: "Upcoming", key: "upcoming"),
@@ -77,6 +79,8 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == collectionViewCategories {
             categorySelectionCallBack?(categories[indexPath.item].key)
+        } else {
+//            selectionIdCallBack()
         }
     }
 }

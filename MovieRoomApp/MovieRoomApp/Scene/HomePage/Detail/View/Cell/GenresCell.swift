@@ -7,11 +7,19 @@
 
 import UIKit
 
+protocol GenresCellProtocol {
+    var genreLabel : String {get}
+}
+
 class GenresCell: UICollectionViewCell {
 
+    @IBOutlet weak var genresLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configure ( item: GenresCellProtocol) {
+        genresLabel.text = item.genreLabel
     }
 
 }

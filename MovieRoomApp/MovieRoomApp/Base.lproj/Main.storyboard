@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="576.81159420289862" y="-482.14285714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Details Controller-->
         <scene sceneID="fRy-gQ-DvP">
             <objects>
-                <viewController id="i0e-fj-dRm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i0e-fj-dRm" customClass="DetailsController" customModule="MovieRoomApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qnK-ev-IeI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,6 +149,9 @@
                             <constraint firstItem="tum-s8-Ii7" firstAttribute="top" secondItem="qnK-ev-IeI" secondAttribute="top" id="zB1-oH-zEP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="tum-s8-Ii7" id="crL-eU-F78"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkO-Mr-ULX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
