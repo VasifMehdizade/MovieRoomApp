@@ -21,7 +21,7 @@ struct Similar: Codable {
 }
 
 // MARK: - Result
-struct Conclusion: Codable {
+struct Conclusion: Codable, CastCellProtocol {
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
@@ -33,6 +33,14 @@ struct Conclusion: Codable {
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    
+    var cellLabel: String{
+        originalTitle
+    }
+    
+    var cellImage: String{
+        ("https://image.tmdb.org/t/p/original/") + (posterPath)
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult
@@ -56,4 +64,3 @@ enum OriginalLanguage: String, Codable {
     case ja = "ja"
     case sv = "sv"
 }
-

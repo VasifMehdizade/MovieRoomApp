@@ -10,7 +10,7 @@ import UIKit
 class SimilarMoviesCollectionViewCell: UICollectionViewCell {
     
     var viewModel = DetailViewModel()
-
+    
     @IBOutlet weak var similarMoviewCollectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,7 +21,6 @@ class SimilarMoviesCollectionViewCell: UICollectionViewCell {
         similarMoviewCollectionView.register(UINib(nibName: "CastCell", bundle: nil), forCellWithReuseIdentifier: "CastCell")
     }
     
-
 }
 
 extension SimilarMoviesCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -31,7 +30,7 @@ extension SimilarMoviesCollectionViewCell : UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-        cell.configure(item: viewModel.similarMovie[indexPath.row] as! CastCellProtocol)
+        cell.configure(item: viewModel.similarMovie[indexPath.row])
         return cell
     }
 }

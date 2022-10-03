@@ -15,7 +15,6 @@ class DetailViewModel {
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
     
-    
     func movieDetail (id: Int) {
         DetailManager.shared.movieDetail(id: id) { items, errorMessage in
             if let errorMessage = errorMessage {
@@ -48,6 +47,4 @@ class DetailViewModel {
             }
         }
     }
-    
-    
 }

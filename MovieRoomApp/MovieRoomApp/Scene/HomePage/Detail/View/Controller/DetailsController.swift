@@ -65,7 +65,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config()
-            headerView.imdbLabel.text = viewModel.moviesCasts.gender
+//            headerView.imdbLabel.text = viewModel.moviesCasts
 
             return headerView
         default:

@@ -32,7 +32,7 @@ extension CastCollectionViewCell : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-        cell.configure(item: viewModel.moviesCasts[indexPath.row] as! CastCellProtocol)
+        cell.configure(item: viewModel.moviesCasts[indexPath.row])
         return cell
     }
 }
