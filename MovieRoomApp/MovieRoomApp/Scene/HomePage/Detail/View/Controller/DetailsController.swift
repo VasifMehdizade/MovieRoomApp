@@ -52,10 +52,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-        
-        variable.selectionIdCallBack = { id in
-            self.viewModel.movieCast(id: id)
-        }
+
         return cell
     }
     
@@ -65,12 +62,27 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config()
-//            headerView.imdbLabel.text = viewModel.moviesCasts
+            headerView.selectionIdCallBack = { id in
+                self.viewModel.movieDetail(id: id)
+            }
+            headerView.descriptinLabelItself.text = "Description"
+            headerView.descriptionLabel.text = viewModel.moviesDetails?.overview
+            headerView.movieName.text = viewModel.moviesDetails?.originalTitle
+            headerView.bookmarkIcon.setImage(UIImage(named: "Save"), for: .normal)
+            headerView.starImage.image = UIImage(named: "Star")
+//            headerView.imdbLabel.text = String(viewModel.moviesDetails?.voteAverage)
+            
+
 
             return headerView
         default:
             assert(false, "Unexpected element kind")
         }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        CGSize(width: collectionView.frame.width, height: 600)
     }
     
 }

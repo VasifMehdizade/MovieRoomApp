@@ -8,9 +8,18 @@
 import UIKit
 import WebKit
 
-class DetailHeaderCollectionReusableView: UICollectionReusableView {
+class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
     
     var viewModel = DetailViewModel()
+    
+    var variable = HomePageController()
+    var viewm = HeaderCollectionReusableView()
+    
+    var categorySelectionCallBack: ((String)->())?
+    var selectionIdCallBack: ((Int)->())?
+
+    
+    var webView1: WKWebView!
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bookmarkIcon: UIButton!
@@ -23,8 +32,17 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        descriptionLabel.text = "Description"
+    }
+    
+     func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView1 = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView1.uiDelegate = self
+        webView = webView1
+    }
+    
+    func values(){
+        movieName.text = viewModel.moviesDetails?.originalTitle
     }
     
     override func layoutSubviews() {
@@ -54,12 +72,14 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
 extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.moviesCasts.count
+        viewModel.moviesDetails?.genres.count ?? 0
+//        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as! GenresCell
-        cell.configure(item: viewModel.moviesDetails?.genres[indexPath.row].name as! GenresCellProtocol)
+        cell.genresLabel.text = viewModel.moviesDetails?.genres[indexPath.row].name
+        
         return cell
     }
     

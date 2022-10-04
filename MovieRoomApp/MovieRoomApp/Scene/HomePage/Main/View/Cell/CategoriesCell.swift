@@ -9,9 +9,4 @@ import UIKit
 
 class CategoriesCell: UICollectionViewCell {
     @IBOutlet  weak var categoriesLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
 }

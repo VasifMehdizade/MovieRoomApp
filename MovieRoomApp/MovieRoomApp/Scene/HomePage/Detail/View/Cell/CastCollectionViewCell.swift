@@ -16,7 +16,6 @@ class CastCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         registerCell()
-        
     }
     
     func registerCell() {
