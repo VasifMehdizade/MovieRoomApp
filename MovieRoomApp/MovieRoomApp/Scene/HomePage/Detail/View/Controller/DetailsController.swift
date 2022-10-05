@@ -9,30 +9,32 @@ import UIKit
 
 class DetailsController: UIViewController {
     
-    // MARK: Variables
-    
-    var viewModel = DetailViewModel()
-    
-    var variable = HomePageController()
-    
     // MARK: IBOutlets
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: Variables
+    
+    var viewModel = DetailViewModel()
+    
+    var movieId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCollectionView()
-        configurationViewModel()
-        registerCell()
         
+        collectionViewConfig()
+        configurationViewModel()
     }
     
-    func registerCollectionView () {
+    func collectionViewConfig () {
+        collectionView.register(UINib(nibName: "CastCell", bundle: nil), forCellWithReuseIdentifier: "CastCell")
         collectionView.register(UINib(nibName: "\(DetailHeaderCollectionReusableView.self)", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)")
     }
     
     func configurationViewModel() {
         showLoader()
+        
+        viewModel.movieDetail(id: movieId)
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -43,11 +45,6 @@ class DetailsController: UIViewController {
             self.collectionView.reloadData()
         }
     }
-    
-    func registerCell() {
-        collectionView.register(UINib(nibName: "CastCell", bundle: nil), forCellWithReuseIdentifier: "CastCell")
-    }
-    
 }
 
 extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -66,18 +63,14 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
-            headerView.config()
-            headerView.selectionIdCallBack = { id in
-                self.viewModel.movieDetail(id: id)
-            }
-            headerView.descriptinLabelItself.text = "Description"
-            headerView.descriptionLabel.text = viewModel.moviesDetails?.overview
-            headerView.movieName.text = viewModel.moviesDetails?.originalTitle
-            headerView.bookmarkIcon.setImage(UIImage(named: "Save"), for: .normal)
-            headerView.starImage.image = UIImage(named: "Star")
-//            headerView.imdbLabel.text = String(viewModel.moviesDetails?.voteAverage)
+            headerView.config(data: viewModel.moviesDetails)
             
-
+//            headerView.descriptinLabelItself.text = "Description"
+//            headerView.descriptionLabel.text = viewModel.moviesDetails?.overview
+//            headerView.movieName.text = viewModel.moviesDetails?.originalTitle
+//            headerView.bookmarkIcon.setImage(UIImage(named: "Save"), for: .normal)
+//            headerView.starImage.image = UIImage(named: "Star")
+//            headerView.imdbLabel.text = String(viewModel.moviesDetails?.voteAverage)
 
             return headerView
         default:
@@ -85,9 +78,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 600)
     }
-    
 }

@@ -9,21 +9,6 @@ import UIKit
 import WebKit
 
 class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
-    
-    // MARK: Variables
-    
-    var viewModel = DetailViewModel()
-    
-    var variable = HomePageController()
-    
-    var viewm = HeaderCollectionReusableView()
-    
-    var categorySelectionCallBack: ((String)->())?
-    
-    var selectionIdCallBack: ((Int)->())?
-
-    var webView1: WKWebView!
-    
     // MARK: IBOutlets
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -35,9 +20,20 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     @IBOutlet weak var genresCollectionView: UICollectionView!
     @IBOutlet weak var descriptinLabelItself: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    
+    // MARK: Variables
+    
+    var variable = HomePageController()
+    
+    var viewm = HeaderCollectionReusableView()
+    
+    var categorySelectionCallBack: ((String)->())?
+    
+    var selectionIdCallBack: ((Int)->())?
+
+    var webView1: WKWebView!
+    
+    var data: Detail?
     
      func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -46,45 +42,24 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         webView = webView1
     }
     
-    func values(){
-        movieName.text = viewModel.moviesDetails?.originalTitle
-    }
-    
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
     }
     
-    func config() {
-        configurationViewModel()
+    func config(data: Detail?) {
+        self.data = data
+        movieName.text = data?.originalTitle
     }
-
-    private func configurationViewModel() {
-        showLoader()
-//        viewModel.moviesCasts()
-        viewModel.errorCallback = { message in
-            self.dismissLoader()
-            self.showAlert(message: message) {}
-        }
-
-        viewModel.successCallback = {
-            self.dismissLoader()
-            self.genresCollectionView.reloadData()
-        }
-    }
-    
 }
 
 extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.moviesDetails?.genres.count ?? 0
-//        return 1
+        data?.genres.count ?? 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as! GenresCell
-        cell.genresLabel.text = viewModel.moviesDetails?.genres[indexPath.row].name
-        
+        cell.genresLabel.text = data?.genres[indexPath.row].name
         return cell
     }
     

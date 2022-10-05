@@ -83,14 +83,9 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == collectionViewCategories {
-            categorySelectionCallBack?(categories[indexPath.item].key)
+            categorySelectionCallBack?(categories[indexPath.row].key)
         } else {
             selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id)
         }
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "DetailController")
-//        navigationController?.show(controller, sender: nil)
-
     }
 }

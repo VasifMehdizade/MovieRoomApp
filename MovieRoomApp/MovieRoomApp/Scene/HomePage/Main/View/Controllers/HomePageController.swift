@@ -1,4 +1,3 @@
-//
 //  HomePageController.swift
 //  MovieRoomApp
 //
@@ -79,6 +78,11 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
             headerView.categorySelectionCallBack = { genre in
                 self.viewModel.getGenres(genre: genre)
             }
+            headerView.selectionIdCallBack = { id in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+                controller.movieId = id
+                self.navigationController?.show(controller, sender: nil)
+            }
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -91,11 +95,8 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView1: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if collectionView1 == collectionView {
-            selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id)
-        }
-        
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+        controller.movieId = viewModel.moviesInfos[indexPath.row].id
         navigationController?.show(controller, sender: nil)
     }
     
