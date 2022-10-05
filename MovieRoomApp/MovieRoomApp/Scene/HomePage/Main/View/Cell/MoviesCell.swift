@@ -13,6 +13,9 @@ protocol MoviesCellProtocol {
 }
 
 class MoviesCell: UICollectionViewCell {
+    
+    // MARK: IBOutlets
+
     @IBOutlet private weak var moviesImage: UIImageView!
     
     func configure(item : MoviesCellProtocol) {

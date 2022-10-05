@@ -9,12 +9,16 @@ import UIKit
 
 class HomePageController: UIViewController, UITabBarControllerDelegate {
     
-    @IBOutlet weak var navigationLabel: UILabel!
-    @IBOutlet private weak var collectionView: UICollectionView!
+    // MARK: Variables
     
     var viewModel = HomePageViewModel()
     
     var selectionIdCallBack: ((Int)->())?
+    
+    // MARK: IBOutlets
+
+    @IBOutlet weak var navigationLabel: UILabel!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,11 +8,15 @@
 import UIKit
 
 class SearchController: UIViewController {
+    
+    // MARK: Variables
+    
+    var viewModel = SearchViewModel()
+
+    // MARK: IBOutlets
 
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var collectionView: UICollectionView!
-    
-    var viewModel = SearchViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

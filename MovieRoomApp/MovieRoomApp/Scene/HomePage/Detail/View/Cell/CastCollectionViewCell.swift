@@ -9,7 +9,11 @@ import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell {
     
+    // MARK: Variables
+    
     var viewModel = DetailViewModel()
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var castCollectionView: UICollectionView!
     

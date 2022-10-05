@@ -8,5 +8,8 @@
 import UIKit
 
 class CategoriesCell: UICollectionViewCell {
+    
+    // MARK: IBOutlets
+
     @IBOutlet  weak var categoriesLabel: UILabel!
 }

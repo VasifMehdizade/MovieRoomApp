@@ -8,12 +8,14 @@
 import Foundation
 
 class HomePageViewModel {
+    
+    // MARK: Variables
+
     var moviesInfos = [Info]()
     var genreMovies = [Info]()
 
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
-    
     
     func getMovies () {
         HomePageManager.shared.getMovies { items, errorMessage in

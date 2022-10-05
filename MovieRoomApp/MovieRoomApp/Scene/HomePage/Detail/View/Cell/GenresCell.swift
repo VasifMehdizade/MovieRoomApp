@@ -8,10 +8,8 @@
 import UIKit
 
 class GenresCell: UICollectionViewCell {
+    
+    // MARK: IBOutlets
 
     @IBOutlet weak var genresLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
 }

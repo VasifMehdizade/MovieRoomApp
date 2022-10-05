@@ -8,6 +8,9 @@
 import Foundation
 
 class SearchViewModel {
+    
+    // MARK: Varibles
+
     var searchResults = [SearchResult]()
 
     var successCallback : (()->())?

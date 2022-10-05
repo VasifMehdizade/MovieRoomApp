@@ -10,16 +10,21 @@ import WebKit
 
 class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
     
+    // MARK: Variables
+    
     var viewModel = DetailViewModel()
     
     var variable = HomePageController()
+    
     var viewm = HeaderCollectionReusableView()
     
     var categorySelectionCallBack: ((String)->())?
+    
     var selectionIdCallBack: ((Int)->())?
 
-    
     var webView1: WKWebView!
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bookmarkIcon: UIButton!

@@ -14,6 +14,9 @@ protocol SearchViewCellProtocol {
 }
 
 class SearchViewCell: UICollectionViewCell {
+    
+    // MARK: IBOutlets
+
     @IBOutlet private weak var searchCellImage: UIImageView!
     @IBOutlet private weak var searchCellView: UIView!
     @IBOutlet private weak var searchCellLabel: UILabel!

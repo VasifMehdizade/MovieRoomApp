@@ -14,6 +14,8 @@ protocol CastCellProtocol {
 }
 
 class CastCell: UICollectionViewCell {
+    
+    // MARK: IBOutlets
 
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var castImage: UIImageView!

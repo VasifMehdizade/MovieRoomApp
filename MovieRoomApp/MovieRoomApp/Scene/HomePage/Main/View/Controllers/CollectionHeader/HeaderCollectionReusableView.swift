@@ -8,9 +8,9 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-    @IBOutlet private weak var collectionViewNowPlaying: UICollectionView!
-    @IBOutlet private weak var collectionViewCategories: UICollectionView!
-    
+
+    // MARK: Variables
+
     var viewModel = HomePageViewModel()
     
     var categorySelectionCallBack: ((String)->())?
@@ -19,6 +19,11 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     var categories = [GenresModel(title: "Top rated", key: "top_rated"),
                       GenresModel(title: "Upcoming", key: "upcoming"),
                       GenresModel(title: "Popular", key: "popular")]
+    
+    // MARK: IBOutlets
+
+    @IBOutlet private weak var collectionViewNowPlaying: UICollectionView!
+    @IBOutlet private weak var collectionViewCategories: UICollectionView!
     
     override func layoutSubviews() {
         collectionViewNowPlaying.register(UINib(nibName: "MoviesCell", bundle: nil), forCellWithReuseIdentifier: "MoviesCell")

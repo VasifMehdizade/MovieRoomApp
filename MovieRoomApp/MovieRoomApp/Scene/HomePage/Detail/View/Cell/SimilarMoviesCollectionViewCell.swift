@@ -9,7 +9,11 @@ import UIKit
 
 class SimilarMoviesCollectionViewCell: UICollectionViewCell {
     
+    // MARK: Variables
+    
     var viewModel = DetailViewModel()
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var similarMoviewCollectionView: UICollectionView!
     override func awakeFromNib() {

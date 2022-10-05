@@ -9,10 +9,15 @@ import UIKit
 
 class DetailsController: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: Variables
+    
     var viewModel = DetailViewModel()
     
     var variable = HomePageController()
+    
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

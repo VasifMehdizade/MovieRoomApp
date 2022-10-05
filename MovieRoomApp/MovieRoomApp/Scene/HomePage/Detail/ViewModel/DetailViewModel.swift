@@ -8,6 +8,9 @@
 import Foundation
 
 class DetailViewModel {
+    
+    // MARK: Variables
+    
     var moviesDetails : Detail?
     var moviesCasts = [CastElement]()
     var similarMovie = [Conclusion]()
