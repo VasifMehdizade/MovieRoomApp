@@ -33,7 +33,6 @@ class DetailsController: UIViewController {
     
     func configurationViewModel() {
         showLoader()
-        
         viewModel.movieDetail(id: movieId)
         viewModel.errorCallback = { message in
             self.dismissLoader()
@@ -49,7 +48,7 @@ class DetailsController: UIViewController {
 
 extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,14 +63,11 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config(data: viewModel.moviesDetails)
+            headerView.movieName.text = viewModel.moviesDetails?.originalTitle
+            headerView.starImage.image = UIImage(named: "Star")
+            headerView.descriptinLabelItself.text = "Description"
             
-//            headerView.descriptinLabelItself.text = "Description"
-//            headerView.descriptionLabel.text = viewModel.moviesDetails?.overview
-//            headerView.movieName.text = viewModel.moviesDetails?.originalTitle
-//            headerView.bookmarkIcon.setImage(UIImage(named: "Save"), for: .normal)
-//            headerView.starImage.image = UIImage(named: "Star")
-//            headerView.imdbLabel.text = String(viewModel.moviesDetails?.voteAverage)
-
+    
             return headerView
         default:
             assert(false, "Unexpected element kind")

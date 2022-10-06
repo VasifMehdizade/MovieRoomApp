@@ -78,9 +78,9 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
             headerView.categorySelectionCallBack = { genre in
                 self.viewModel.getGenres(genre: genre)
             }
-            headerView.selectionIdCallBack = { id in
+            headerView.selectionIdCallBack = { movieId in
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
-                controller.movieId = id
+                controller.movieId = movieId
                 self.navigationController?.show(controller, sender: nil)
             }
             return headerView
@@ -96,7 +96,7 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView1: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
-        controller.movieId = viewModel.moviesInfos[indexPath.row].id
+        controller.movieId = viewModel.genreMovies[indexPath.row].id
         navigationController?.show(controller, sender: nil)
     }
     
