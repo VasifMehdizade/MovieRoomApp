@@ -10,15 +10,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenresCell" customModule="MovieRoomApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="61" height="32"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="122" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="61" height="32"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDN-D4-0Lu">
-                        <rect key="frame" x="40" y="15" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="18" y="9" width="25" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -26,14 +26,16 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="jDN-D4-0Lu" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" constant="-21.5" id="9Ui-KG-2LW"/>
-                <constraint firstItem="jDN-D4-0Lu" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Wch-Ti-lG0"/>
+                <constraint firstItem="jDN-D4-0Lu" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" constant="-21.5" id="2SU-wi-I0M"/>
+                <constraint firstItem="jDN-D4-0Lu" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="3w5-wc-hXa"/>
+                <constraint firstItem="jDN-D4-0Lu" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.409836" id="SjB-j9-Pa8"/>
+                <constraint firstItem="jDN-D4-0Lu" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.46875" id="ecz-8j-bJZ"/>
             </constraints>
-            <size key="customSize" width="122" height="50"/>
+            <size key="customSize" width="61" height="32"/>
             <connections>
                 <outlet property="genresLabel" destination="jDN-D4-0Lu" id="KWd-6D-sbY"/>
             </connections>
-            <point key="canvasLocation" x="189.85507246376812" y="71.651785714285708"/>
+            <point key="canvasLocation" x="38.405797101449281" y="44.196428571428569"/>
         </collectionViewCell>
     </objects>
 </document>
