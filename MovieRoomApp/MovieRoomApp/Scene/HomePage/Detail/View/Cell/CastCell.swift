@@ -24,7 +24,7 @@ class CastCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func configure (item : CastCellProtocol) {
+    func configureCast (item : CastCellProtocol) {
         castImage.sd_setImage(with: URL(string: item.cellImage))
         castLabel.text = item.cellLabel
     }

@@ -33,18 +33,11 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     
     var data: Detail?
     
-    func viewDidAppear(animated: Bool) {
-        webView = WKWebView()
-        view = webView
-        let request = NSURLRequest(URL: NSURL(string: data?.posterPath))
-        webView.loadRequest(request)
-    }
-    
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
     }
     
-    func config(data: Detail?) {
+    func config(data: Detail?, videos: [MovieResults]) {
         self.data = data
         movieName.text = data?.originalTitle
         starImage.image = UIImage(named: "Star")
@@ -54,6 +47,10 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         let a = data?.voteAverage ?? 0
         let y = Double(round(10 * a) / 10)
         imdbLabel.text = "\(y)/10 IMDb"
+        
+        let urlString = "https://www.youtube.com/watch?v=\(videos.first?.key ?? "")"
+        let request = URLRequest(url: URL(string: urlString)!)
+        webView.load(request)
     }
 }
 

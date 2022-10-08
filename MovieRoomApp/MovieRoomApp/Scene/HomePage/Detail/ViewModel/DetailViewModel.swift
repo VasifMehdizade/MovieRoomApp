@@ -14,7 +14,7 @@ class DetailViewModel {
     var moviesDetails: Detail?
     var moviesCasts = [CastElement]()
     var similarMovie = [Conclusion]()
-    var getVideo = [MovieResults]()
+    var videoItems = [MovieResults]()
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
     
@@ -24,10 +24,13 @@ class DetailViewModel {
                 self.errorCallback?(errorMessage)
             } else if let docs = items {
                 self.moviesDetails = docs
-                self.successCallback?()
+                self.getVideos(id: id)
+//                self.successCallback?()
             }
         }
     }
+    
+    
     
     func movieCast(id : Int) {
         DetailManager.shared.movieCast(id: id) { items, errorMessage in
@@ -36,6 +39,7 @@ class DetailViewModel {
             } else if let docs = items?.cast {
                 self.moviesCasts = docs
                 self.successCallback?()
+                self.getVideos(id: id)
             }
         }
     }
@@ -55,8 +59,8 @@ class DetailViewModel {
         DetailManager.shared.getVideos(id: id) { items, errorMessage in
             if let errorMessage = errorMessage {
                 self.errorCallback?(errorMessage)
-            } else if let docs = items?.results {
-                self.getVideo = docs
+            } else if let videos = items?.results {
+                self.videoItems = videos
                 self.successCallback?()
             }
         }

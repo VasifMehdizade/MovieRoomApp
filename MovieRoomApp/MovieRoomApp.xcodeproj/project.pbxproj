@@ -38,8 +38,6 @@
 		2AC4B08628E96B2F00CB9F4F /* CastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4B08428E96B2F00CB9F4F /* CastCell.xib */; };
 		2AC4B08D28E9738800CB9F4F /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4B08B28E9738800CB9F4F /* CastCollectionViewCell.swift */; };
 		2AC4B08E28E9738800CB9F4F /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4B08C28E9738800CB9F4F /* CastCollectionViewCell.xib */; };
-		2AC4B09128E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4B08F28E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.swift */; };
-		2AC4B09228E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4B09028E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.xib */; };
 		2AC4B09528E9747900CB9F4F /* GenresCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4B09328E9747900CB9F4F /* GenresCell.swift */; };
 		2AC4B09628E9747900CB9F4F /* GenresCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC4B09428E9747900CB9F4F /* GenresCell.xib */; };
 		2AC4B09828E9775800CB9F4F /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC4B09728E9775800CB9F4F /* DetailManager.swift */; };
@@ -88,8 +86,6 @@
 		2AC4B08428E96B2F00CB9F4F /* CastCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCell.xib; sourceTree = "<group>"; };
 		2AC4B08B28E9738800CB9F4F /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AC4B08C28E9738800CB9F4F /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
-		2AC4B08F28E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarMoviesCollectionViewCell.swift; sourceTree = "<group>"; };
-		2AC4B09028E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarMoviesCollectionViewCell.xib; sourceTree = "<group>"; };
 		2AC4B09328E9747900CB9F4F /* GenresCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresCell.swift; sourceTree = "<group>"; };
 		2AC4B09428E9747900CB9F4F /* GenresCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenresCell.xib; sourceTree = "<group>"; };
 		2AC4B09728E9775800CB9F4F /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
@@ -404,8 +400,6 @@
 				2AC4B08428E96B2F00CB9F4F /* CastCell.xib */,
 				2AC4B08B28E9738800CB9F4F /* CastCollectionViewCell.swift */,
 				2AC4B08C28E9738800CB9F4F /* CastCollectionViewCell.xib */,
-				2AC4B08F28E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.swift */,
-				2AC4B09028E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.xib */,
 				2AC4B09328E9747900CB9F4F /* GenresCell.swift */,
 				2AC4B09428E9747900CB9F4F /* GenresCell.xib */,
 			);
@@ -516,7 +510,6 @@
 				2AC4B08228E890AC00CB9F4F /* DetailHeaderCollectionReusableView.xib in Resources */,
 				2AADE3EB28E1E86900EAE4C5 /* SearchViewCell.xib in Resources */,
 				2A0C753F28DF3CAC00341121 /* Main.storyboard in Resources */,
-				2AC4B09228E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,7 +582,6 @@
 				2AC4B07428E8307E00CB9F4F /* GenresModel.swift in Sources */,
 				2A8588D228E2163B0055708A /* SearchViewModel.swift in Sources */,
 				2AC4B09A28E97A7800CB9F4F /* DetailModel.swift in Sources */,
-				2AC4B09128E973AD00CB9F4F /* SimilarMoviesCollectionViewCell.swift in Sources */,
 				2A0C753828DF3CAC00341121 /* AppDelegate.swift in Sources */,
 				2AC4B09528E9747900CB9F4F /* GenresCell.swift in Sources */,
 				2A0C755528DF3E4A00341121 /* UIViewController + Ext.swift in Sources */,

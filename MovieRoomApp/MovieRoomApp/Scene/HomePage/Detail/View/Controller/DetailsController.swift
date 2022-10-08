@@ -21,19 +21,20 @@ class DetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionViewConfig()
         configurationViewModel()
+        collectionView.reloadData()
     }
     
     func collectionViewConfig () {
-        collectionView.register(UINib(nibName: "CastCell", bundle: nil), forCellWithReuseIdentifier: "CastCell")
+        collectionView.register(UINib(nibName: "CastCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CastCollectionViewCell")
         collectionView.register(UINib(nibName: "\(DetailHeaderCollectionReusableView.self)", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)")
     }
     
     func configurationViewModel() {
         showLoader()
         viewModel.movieDetail(id: movieId)
+        viewModel.movieCast(id: movieId)
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -52,9 +53,21 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as! CastCollectionViewCell
+//        if indexPath.item == 0 {
+//            cell.cellTitle.text = "Cast"
+//            cell.castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath)
+//        }
+//        else {
+//            cell.cellTitle.text = "Similar Movies"
+//            cell.castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath)
+//        }
+        cell.cellTitle.text = "Cast"
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width, height: 150)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -62,7 +75,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
-            headerView.config(data: viewModel.moviesDetails)
+            headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
           
             return headerView
         default:

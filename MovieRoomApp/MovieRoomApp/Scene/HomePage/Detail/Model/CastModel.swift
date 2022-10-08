@@ -30,7 +30,7 @@ struct CastElement: Codable, CastCellProtocol {
     }
     
     var cellImage: String{
-        "https://image.tmdb.org/t/p/original/" + (profilePath ?? "")
+        "https://image.tmdb.org/t/p/original\(profilePath ?? "")"
     }
 
     enum CodingKeys: String, CodingKey {
