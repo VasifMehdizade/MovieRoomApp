@@ -44,7 +44,9 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
         descriptinLabelItself.text = "Description"
         descriptionLabel.text = data?.overview
         genresCollectionView.reloadData()
-        
+        let a = data?.voteAverage ?? 0
+        let y = Double(round(10 * a) / 10)
+        imdbLabel.text = "\(y)/10 IMDb"
     }
 }
 
@@ -60,6 +62,6 @@ extension DetailHeaderCollectionReusableView : UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 20, height: 32)
+        CGSize(width: collectionView.frame.width / 4 - 10, height: 28)
     }
 }
