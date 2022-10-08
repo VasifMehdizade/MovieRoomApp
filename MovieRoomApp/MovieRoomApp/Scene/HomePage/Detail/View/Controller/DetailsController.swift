@@ -64,7 +64,6 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config(data: viewModel.moviesDetails)
           
-    
             return headerView
         default:
             assert(false, "Unexpected element kind")

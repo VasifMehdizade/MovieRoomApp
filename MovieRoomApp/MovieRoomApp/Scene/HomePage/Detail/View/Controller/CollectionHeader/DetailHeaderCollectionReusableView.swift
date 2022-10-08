@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class DetailHeaderCollectionReusableView: UICollectionReusableView {
+class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
     
     // MARK: IBOutlets
     
@@ -32,6 +32,13 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     var selectionIdCallBack: ((Int)->())?
     
     var data: Detail?
+    
+    func viewDidAppear(animated: Bool) {
+        webView = WKWebView()
+        view = webView
+        let request = NSURLRequest(URL: NSURL(string: data?.posterPath))
+        webView.loadRequest(request)
+    }
     
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
