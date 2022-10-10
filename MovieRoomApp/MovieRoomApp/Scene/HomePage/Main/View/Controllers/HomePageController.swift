@@ -11,9 +11,7 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
     // MARK: Variables
     
     var viewModel = HomePageViewModel()
-    
-    var selectionIdCallBack: ((Int)->())?
-    
+        
     // MARK: IBOutlets
 
     @IBOutlet weak var navigationLabel: UILabel!

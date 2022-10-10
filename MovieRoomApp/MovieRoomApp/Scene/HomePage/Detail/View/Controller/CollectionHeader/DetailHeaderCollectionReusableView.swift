@@ -20,7 +20,6 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     @IBOutlet weak var imdbLabel: UILabel!
     @IBOutlet weak var genresCollectionView: UICollectionView!
     @IBOutlet weak var descriptinLabelItself: UILabel!
-    
     @IBOutlet weak var view: UIView!
     
     // MARK: Variables

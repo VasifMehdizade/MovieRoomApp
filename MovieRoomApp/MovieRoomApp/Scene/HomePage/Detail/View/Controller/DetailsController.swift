@@ -17,6 +17,8 @@ class DetailsController: UIViewController {
     
     var viewModel = DetailViewModel()
     
+    var selectionIdCallBack: ((Int)->())?
+    
     var movieId = 0
     
     override func viewDidLoad() {
@@ -54,15 +56,15 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as! CastCollectionViewCell
-//        if indexPath.item == 0 {
-//            cell.cellTitle.text = "Cast"
-//            cell.castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath)
-//        }
-//        else {
-//            cell.cellTitle.text = "Similar Movies"
-//            cell.castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath)
-//        }
+        cell.castCollectionView.cellForItem(at: [indexPath.row])
+        selectionIdCallBack?(movieId)
+        selectionIdCallBack = { movieId in
+//            cell.movieId = movieId
+//            cell.movieId = self.viewModel.moviesDetails?.id ?? 0
+        }
+        
         cell.cellTitle.text = "Cast"
+//        cell.movieId = viewModel.moviesDetails?.id ?? 0
         return cell
     }
     
