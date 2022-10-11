@@ -37,6 +37,8 @@ class DetailsController: UIViewController {
         showLoader()
         viewModel.movieDetail(id: movieId)
         viewModel.movieCast(id: movieId)
+        viewModel.similarMovies(id: movieId)
+
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -56,20 +58,16 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as! CastCollectionViewCell
-        cell.castCollectionView.cellForItem(at: [indexPath.row])
-        selectionIdCallBack?(movieId)
-        selectionIdCallBack = { movieId in
-//            cell.movieId = movieId
-//            cell.movieId = self.viewModel.moviesDetails?.id ?? 0
+        if indexPath.row == 0 {
+            cell.configureCell(data: viewModel.moviesCasts, title: "Cast")
+        } else {
+            cell.configureCell(data: viewModel.similarMovie, title: "Similar Movies")
         }
-        
-        cell.cellTitle.text = "Cast"
-//        cell.movieId = viewModel.moviesDetails?.id ?? 0
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 150)
+        CGSize(width: collectionView.frame.width, height: 170)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -78,7 +76,6 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
-          
             return headerView
         default:
             assert(false, "Unexpected element kind")

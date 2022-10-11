@@ -70,13 +70,9 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == collectionViewNowPlaying {
-//            // 210 - 144
-//            // width - x
-//            let height = collectionView.frame.height * 210 / 144 - 10
-//            let width = collectionView.frame.height * 144 / 210 - 10
-//            return CGSize(width: width, height: height)
-//        }
+        if collectionView == collectionViewCategories {
+            return CGSize(width: collectionView.frame.width/3 - 5, height: 200)
+        }
         return CGSize(width: collectionView.frame.width/2 - 20, height: 230)
     }
     

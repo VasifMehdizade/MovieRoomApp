@@ -8,9 +8,10 @@
 import UIKit
 import SDWebImage
 
-protocol CastCellProtocol {
-    var cellLabel : String {get}
-    var cellImage : String { get}
+protocol TitleImageProtocol {
+    var titleText: String { get }
+    var image: String { get }
+    var dataId: String { get }
 }
 
 class CastCell: UICollectionViewCell {
@@ -20,13 +21,9 @@ class CastCell: UICollectionViewCell {
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var castImage: UIImageView!
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
-    func configureCast (item : CastCellProtocol) {
-        castImage.sd_setImage(with: URL(string: item.cellImage))
-        castLabel.text = item.cellLabel
+    func configureCast (item : TitleImageProtocol) {
+        castImage.sd_setImage(with: URL(string: item.image))
+        castLabel.text = item.titleText
     }
-
 }

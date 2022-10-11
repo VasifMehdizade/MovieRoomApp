@@ -130,7 +130,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tum-s8-Ii7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="a8n-RX-dtj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -145,7 +145,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qwe-lB-Fhk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qwe-lB-Fhk" firstAttribute="trailing" secondItem="tum-s8-Ii7" secondAttribute="trailing" id="0m9-hx-tdQ"/>
                             <constraint firstItem="qwe-lB-Fhk" firstAttribute="bottom" secondItem="tum-s8-Ii7" secondAttribute="bottom" id="ct8-sz-7a6"/>
@@ -259,9 +259,6 @@
         <image name="Home" width="20" height="22"/>
         <image name="Save" width="22" height="24"/>
         <image name="Search" width="22" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

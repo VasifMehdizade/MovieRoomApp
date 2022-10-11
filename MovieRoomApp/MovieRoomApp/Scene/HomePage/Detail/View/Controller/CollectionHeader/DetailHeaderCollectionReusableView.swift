@@ -34,6 +34,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
+
     }
     
     func config(data: Detail?, videos: [MovieResults]) {

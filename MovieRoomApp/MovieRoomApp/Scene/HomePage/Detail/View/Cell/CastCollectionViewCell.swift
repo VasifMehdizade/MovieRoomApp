@@ -10,12 +10,8 @@ import UIKit
 class CastCollectionViewCell: UICollectionViewCell {
     
     // MARK: Variables
-    
-    var viewModel = DetailViewModel()
-    
-    var movieId = 0
-    
-    var selectionIdCallBack: ((Int)->())?
+    var items = [TitleImageProtocol]()
+    private var selectionIdCallBack: ((Int)->())?
     
     // MARK: IBOutlets
     
@@ -25,43 +21,31 @@ class CastCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         registerCell()
-        castCollectionView.reloadData()
-        configurationViewModel()
     }
     
     func registerCell() {
         castCollectionView.register(UINib(nibName: "CastCell", bundle: nil), forCellWithReuseIdentifier: "CastCell")
     }
     
-    func configurationViewModel() {
-        showLoader()
-        selectionIdCallBack = { movieId in
-            self.viewModel.movieCast(id: movieId)
-        }
-        viewModel.errorCallback = { message in
-            self.dismissLoader()
-            self.showAlert(message: message) {}
-        }
-        
-        viewModel.successCallback = {
-            self.dismissLoader()
-            self.castCollectionView.reloadData()
-        }
-    }
+    func configureCell (data: [TitleImageProtocol], title : String) {
+        self.cellTitle.text = title
+        self.items = data
+        castCollectionView.reloadData()
+    }    
 }
 
 extension CastCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.moviesCasts.count
+        items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCell
-        cell.configureCast(item: viewModel.moviesCasts[indexPath.row])
-            return cell
-        }
+        cell.configureCast(item: items[indexPath.row])
+        return cell
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 100)
+        CGSize(width: collectionView.frame.width / 4 - 10, height: 110)
     }
-    }
+}

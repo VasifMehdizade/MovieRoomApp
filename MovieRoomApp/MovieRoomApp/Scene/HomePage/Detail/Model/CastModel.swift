@@ -12,8 +12,7 @@ struct Cast: Codable {
 }
 
 // MARK: - CastElement
-struct CastElement: Codable, CastCellProtocol {
-    
+struct CastElement: Codable, TitleImageProtocol {
     let adult: Bool
     let gender, id: Int
     let knownForDepartment, name, originalName: String
@@ -25,11 +24,15 @@ struct CastElement: Codable, CastCellProtocol {
     let order: Int?
     let department, job: String?
     
-    var cellLabel: String{
+    var dataId: String {
+        "\(id)"
+    }
+    
+    var titleText: String {
         name
     }
     
-    var cellImage: String{
+    var image: String {
         "https://image.tmdb.org/t/p/original\(profilePath ?? "")"
     }
 
