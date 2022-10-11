@@ -10,7 +10,12 @@ import UIKit
 class CastCollectionViewCell: UICollectionViewCell {
     
     // MARK: Variables
+        
+    private var movieCast = [CastElement]()
+    private var similarMovie = [Conclusion]()
+    
     var items = [TitleImageProtocol]()
+
     private var selectionIdCallBack: ((Int)->())?
     
     // MARK: IBOutlets
@@ -31,7 +36,7 @@ class CastCollectionViewCell: UICollectionViewCell {
         self.cellTitle.text = title
         self.items = data
         castCollectionView.reloadData()
-    }    
+    }
 }
 
 extension CastCollectionViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -46,6 +51,6 @@ extension CastCollectionViewCell : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 4 - 10, height: 110)
+        CGSize(width: collectionView.frame.width / 4 - 10, height: 140)
     }
 }
