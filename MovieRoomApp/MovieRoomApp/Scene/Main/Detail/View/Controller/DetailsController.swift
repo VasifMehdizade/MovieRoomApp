@@ -38,7 +38,7 @@ class DetailsController: UIViewController {
         viewModel.movieDetail(id: movieId)
         viewModel.movieCast(id: movieId)
         viewModel.similarMovies(id: movieId)
-
+        
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -60,6 +60,11 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as! CastCollectionViewCell
         if indexPath.row == 0 {
             cell.configureCell(data: viewModel.moviesCasts, title: "Cast")
+            cell.selectionIdCallBack = { id in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "ActorsMoviesController") as! ActorsMoviesController
+                controller.actorId = id
+                self.navigationController?.show(controller, sender: nil)
+            }
         } else {
             cell.configureCell(data: viewModel.similarMovie, title: "Similar Movies")
         }
@@ -71,7 +76,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-
+        
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView

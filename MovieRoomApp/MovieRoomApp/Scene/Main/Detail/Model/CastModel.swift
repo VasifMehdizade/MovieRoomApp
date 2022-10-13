@@ -24,8 +24,8 @@ struct CastElement: Codable, TitleImageProtocol {
     let order: Int?
     let department, job: String?
     
-    var dataId: String {
-        "\(id)"
+    var dataId: Int {
+        id
     }
     
     var titleText: String {

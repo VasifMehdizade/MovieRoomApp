@@ -11,15 +11,16 @@ import SDWebImage
 protocol TitleImageProtocol {
     var titleText: String { get }
     var image: String { get }
-    var dataId: String { get }
+    var dataId: Int { get }
 }
 
 class CastCell: UICollectionViewCell {
-    
+        
     // MARK: IBOutlets
 
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var castImage: UIImageView!
+    
     override func awakeFromNib() {
     }
     

@@ -92,7 +92,6 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView1: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
         controller.movieId = viewModel.genreMovies[indexPath.row].id
         navigationController?.show(controller, sender: nil)

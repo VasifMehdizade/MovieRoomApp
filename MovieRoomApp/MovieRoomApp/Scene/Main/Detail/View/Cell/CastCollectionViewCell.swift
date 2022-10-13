@@ -15,8 +15,10 @@ class CastCollectionViewCell: UICollectionViewCell {
     private var similarMovie = [Conclusion]()
     
     var items = [TitleImageProtocol]()
+    
+    var viewModel = DetailViewModel()
 
-    private var selectionIdCallBack: ((Int)->())?
+    var selectionIdCallBack: ((Int)->())?
     
     // MARK: IBOutlets
     
@@ -52,5 +54,9 @@ extension CastCollectionViewCell : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width / 4 - 10, height: 140)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectionIdCallBack?(items[indexPath.row].dataId)
     }
 }

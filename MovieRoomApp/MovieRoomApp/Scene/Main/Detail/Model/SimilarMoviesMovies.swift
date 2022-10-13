@@ -34,8 +34,8 @@ struct Conclusion: Codable, TitleImageProtocol {
     let voteAverage: Double
     let voteCount: Int
     
-    var dataId: String {
-        "\(id)"
+    var dataId: Int {
+        id
     }
     
     var titleText: String {
