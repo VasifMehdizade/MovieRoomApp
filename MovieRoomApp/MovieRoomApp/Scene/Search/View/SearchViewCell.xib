@@ -10,21 +10,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SearchViewCell" customModule="MovieRoomApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+            <rect key="frame" x="0.0" y="0.0" width="564" height="280"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                <rect key="frame" x="0.0" y="0.0" width="564" height="280"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3PZ-8r-rek">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                        <rect key="frame" x="12" y="10" width="202" height="260"/>
                     </imageView>
-                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lv1-FP-VZv">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZd-cF-uiX">
-                        <rect key="frame" x="42" y="128.5" width="196" height="23"/>
+                        <rect key="frame" x="226" y="10" width="318" height="40"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -33,20 +29,16 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="dZd-cF-uiX" firstAttribute="width" secondItem="Lv1-FP-VZv" secondAttribute="width" multiplier="0.7" id="0Jk-Xj-NlK"/>
-                <constraint firstItem="dZd-cF-uiX" firstAttribute="centerX" secondItem="Lv1-FP-VZv" secondAttribute="centerX" id="BTX-A8-Frr"/>
-                <constraint firstItem="Lv1-FP-VZv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Clu-fR-tQs"/>
-                <constraint firstItem="Lv1-FP-VZv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H0X-o5-mVW"/>
-                <constraint firstItem="dZd-cF-uiX" firstAttribute="centerY" secondItem="Lv1-FP-VZv" secondAttribute="centerY" id="KAl-6s-ZbG"/>
-                <constraint firstAttribute="bottom" secondItem="3PZ-8r-rek" secondAttribute="bottom" id="dtt-QK-8Q4"/>
-                <constraint firstItem="3PZ-8r-rek" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fm8-Ro-eum"/>
-                <constraint firstItem="dZd-cF-uiX" firstAttribute="height" secondItem="Lv1-FP-VZv" secondAttribute="height" multiplier="0.0821429" id="g48-tM-21h"/>
-                <constraint firstItem="3PZ-8r-rek" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kmH-Ob-lN7"/>
-                <constraint firstAttribute="trailing" secondItem="3PZ-8r-rek" secondAttribute="trailing" id="mad-T0-WmM"/>
-                <constraint firstAttribute="trailing" secondItem="Lv1-FP-VZv" secondAttribute="trailing" id="tmA-uJ-rpq"/>
-                <constraint firstAttribute="bottom" secondItem="Lv1-FP-VZv" secondAttribute="bottom" id="xwg-6O-fdP"/>
+                <constraint firstItem="dZd-cF-uiX" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.142857" id="LIb-KA-juG"/>
+                <constraint firstItem="3PZ-8r-rek" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.358156" id="MJO-x6-z8h"/>
+                <constraint firstItem="dZd-cF-uiX" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.56383" id="Po9-UH-11g"/>
+                <constraint firstItem="3PZ-8r-rek" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.928571" id="ahx-j4-oEN"/>
+                <constraint firstItem="dZd-cF-uiX" firstAttribute="top" secondItem="3PZ-8r-rek" secondAttribute="top" id="dCx-6I-9Xv"/>
+                <constraint firstItem="3PZ-8r-rek" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="jh3-9t-RdO"/>
+                <constraint firstItem="dZd-cF-uiX" firstAttribute="leading" secondItem="3PZ-8r-rek" secondAttribute="trailing" constant="12" id="nQh-Ha-LKU"/>
+                <constraint firstItem="3PZ-8r-rek" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vYn-Rh-6Dx"/>
             </constraints>
-            <size key="customSize" width="200" height="167"/>
+            <size key="customSize" width="484" height="167"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                     <integer key="value" value="16"/>
@@ -55,9 +47,8 @@
             <connections>
                 <outlet property="searchCellImage" destination="3PZ-8r-rek" id="osh-GV-B3T"/>
                 <outlet property="searchCellLabel" destination="dZd-cF-uiX" id="vhi-yL-AGL"/>
-                <outlet property="searchCellView" destination="Lv1-FP-VZv" id="Mn1-KV-uBL"/>
             </connections>
-            <point key="canvasLocation" x="166.66666666666669" y="46.875"/>
+            <point key="canvasLocation" x="176.81159420289856" y="27.455357142857142"/>
         </collectionViewCell>
     </objects>
 </document>

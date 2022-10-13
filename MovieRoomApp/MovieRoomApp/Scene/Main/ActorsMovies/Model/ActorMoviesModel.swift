@@ -15,6 +15,10 @@ struct ActorMovies: Codable {
 
 // MARK: - Cast
 struct Casting: Codable, ActorsMoviesCellProtocol {
+    var filmId: Int{
+        id ?? 0
+    }
+    
     var image: String{
         "https://image.tmdb.org/t/p/original\(posterPath ?? "")"
     }

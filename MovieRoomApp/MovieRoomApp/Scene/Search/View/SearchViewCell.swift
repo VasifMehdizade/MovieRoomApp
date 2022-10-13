@@ -21,7 +21,7 @@ class SearchViewCell: UICollectionViewCell {
     @IBOutlet private weak var searchCellView: UIView!
     @IBOutlet private weak var searchCellLabel: UILabel!
     
-    func configure( item : SearchViewCellProtocol) {
+    func configure(item : SearchViewCellProtocol) {
         searchCellImage.sd_setImage(with: URL(string: item.searchImage))
         searchCellLabel.text = item.searchLabel
     }

@@ -12,6 +12,7 @@ protocol ActorsMoviesCellProtocol {
     var image : String {get}
     var name : String {get}
     var movieOverview : String {get}
+    var filmId : Int {get}
 }
 
 class ActorsMoviesCell: UICollectionViewCell {
@@ -25,6 +26,5 @@ class ActorsMoviesCell: UICollectionViewCell {
         movieTitle.text = item.name
         movieOverview.text = item.movieOverview
     }
-    
 
 }

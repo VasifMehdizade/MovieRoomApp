@@ -19,14 +19,21 @@ struct Search: Codable {
 }
 
 // MARK: - Result
-struct SearchResult: Codable, SearchViewCellProtocol {
-    var searchLabel: String {
+struct SearchResult: Codable, ActorsMoviesCellProtocol {
+    var image: String {
+        "https://image.tmdb.org/t/p/original\(posterPath)"
+    }
+    
+    var name: String{
         originalTitle
     }
     
-    var searchImage: String{
-        "https://image.tmdb.org/t/p/original\(posterPath)"
-
+    var movieOverview: String{
+        overview
+    }
+        
+    var filmId: Int {
+        id
     }
     
     let adult: Bool

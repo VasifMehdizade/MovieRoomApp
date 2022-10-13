@@ -23,15 +23,10 @@ class SearchController: UIViewController {
         registerCell()
         configurationViewModel()
         configureNavigation()
-
     }
     
-//    @IBAction func searchTextFieldAction(_ sender: UITextField) {
-//        viewModel.getSearchResults(text: sender.text ?? "")
-//    }
-    
     func registerCell() {
-        collectionView.register(UINib(nibName: "SearchViewCell", bundle: nil), forCellWithReuseIdentifier: "SearchViewCell")
+        collectionView.register(UINib(nibName: "ActorsMoviesCell", bundle: nil), forCellWithReuseIdentifier: "ActorsMoviesCell")
     }
     
     func configureNavigation() {
@@ -62,13 +57,21 @@ extension SearchController : UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchViewCell", for: indexPath) as! SearchViewCell
-        cell.configure(item: viewModel.searchResults[indexPath.item])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorsMoviesCell", for: indexPath) as! ActorsMoviesCell
+        cell.configure(item: viewModel.searchResults[indexPath.row])
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 0.5
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 220)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+        controller.movieId = viewModel.searchResults[indexPath.row].filmId
+        navigationController?.show(controller, sender: nil)
     }
 }
 

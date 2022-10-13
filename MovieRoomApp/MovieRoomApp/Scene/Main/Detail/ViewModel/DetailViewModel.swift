@@ -17,7 +17,6 @@ class DetailViewModel {
     var videoItems = [MovieResults]()
     var actorsMovie = [Casting]()
     
-
     var successCallback : (()->())?
     var errorCallback : ((String)->())?
     

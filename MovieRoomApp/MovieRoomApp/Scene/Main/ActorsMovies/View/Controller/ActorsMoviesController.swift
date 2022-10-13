@@ -62,4 +62,10 @@ extension ActorsMoviesController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 200)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
+        controller.movieId = viewModel.actorsMovie[indexPath.row].filmId
+        navigationController?.show(controller, sender: nil)
+    }
 }
