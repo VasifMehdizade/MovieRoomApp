@@ -67,6 +67,11 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
             }
         } else {
             cell.configureCell(data: viewModel.similarMovie, title: "Similar Movies")
+            cell.selectionIdCallBack = { item in
+                self.viewModel.movieCast(id: item)
+                self.viewModel.movieDetail(id: item)
+                self.viewModel.similarMovies(id: item)
+            }
         }
         return cell
     }
@@ -81,6 +86,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
+            
             return headerView
         default:
             assert(false, "Unexpected element kind")

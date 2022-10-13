@@ -10,14 +10,14 @@ import UIKit
 class CastCollectionViewCell: UICollectionViewCell {
     
     // MARK: Variables
-        
+    
     private var movieCast = [CastElement]()
     private var similarMovie = [Conclusion]()
     
     var items = [TitleImageProtocol]()
     
     var viewModel = DetailViewModel()
-
+    
     var selectionIdCallBack: ((Int)->())?
     
     // MARK: IBOutlets

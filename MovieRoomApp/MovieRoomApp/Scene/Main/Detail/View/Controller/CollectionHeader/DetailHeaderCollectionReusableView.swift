@@ -23,14 +23,11 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     @IBOutlet weak var view: UIView!
     
     // MARK: Variables
-    
-    var variable = HomePageController()
-    
+        
     var data: Detail?
     
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
-
     }
     
     func config(data: Detail?, videos: [MovieResults]) {
