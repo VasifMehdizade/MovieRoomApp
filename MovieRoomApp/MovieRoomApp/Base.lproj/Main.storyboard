@@ -170,8 +170,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gBQ-Ah-AQW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="12" y="44" width="390" height="818"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DyI-Q4-11Z">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -189,8 +189,8 @@
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="4G2-W2-N0w" firstAttribute="bottom" secondItem="gBQ-Ah-AQW" secondAttribute="bottom" id="TUs-sk-NZO"/>
-                            <constraint firstItem="gBQ-Ah-AQW" firstAttribute="leading" secondItem="4G2-W2-N0w" secondAttribute="leading" id="TeT-qW-q4Y"/>
-                            <constraint firstItem="4G2-W2-N0w" firstAttribute="trailing" secondItem="gBQ-Ah-AQW" secondAttribute="trailing" id="W34-aJ-Kzl"/>
+                            <constraint firstItem="gBQ-Ah-AQW" firstAttribute="leading" secondItem="4G2-W2-N0w" secondAttribute="leading" constant="12" id="TeT-qW-q4Y"/>
+                            <constraint firstItem="4G2-W2-N0w" firstAttribute="trailing" secondItem="gBQ-Ah-AQW" secondAttribute="trailing" constant="12" id="W34-aJ-Kzl"/>
                             <constraint firstItem="gBQ-Ah-AQW" firstAttribute="top" secondItem="4G2-W2-N0w" secondAttribute="top" id="ktI-bv-yHB"/>
                         </constraints>
                     </view>
@@ -300,9 +300,6 @@
         <image name="Home" width="20" height="22"/>
         <image name="Save" width="22" height="24"/>
         <image name="Search" width="22" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

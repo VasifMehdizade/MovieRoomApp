@@ -25,10 +25,6 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     // MARK: Variables
     
     var variable = HomePageController()
-        
-    var categorySelectionCallBack: ((String)->())?
-    
-    var selectionIdCallBack: ((Int)->())?
     
     var data: Detail?
     

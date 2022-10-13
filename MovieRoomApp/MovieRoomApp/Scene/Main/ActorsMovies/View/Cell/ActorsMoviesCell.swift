@@ -25,5 +25,6 @@ class ActorsMoviesCell: UICollectionViewCell {
         movieTitle.text = item.name
         movieOverview.text = item.movieOverview
     }
+    
 
 }

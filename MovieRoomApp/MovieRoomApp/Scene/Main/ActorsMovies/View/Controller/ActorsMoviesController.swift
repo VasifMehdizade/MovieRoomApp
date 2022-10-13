@@ -53,6 +53,9 @@ extension ActorsMoviesController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorsMoviesCell", for: indexPath) as! ActorsMoviesCell
         cell.configure(item: viewModel.actorsMovie[indexPath.row])
+        
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 0.5
         return cell
     }
     
