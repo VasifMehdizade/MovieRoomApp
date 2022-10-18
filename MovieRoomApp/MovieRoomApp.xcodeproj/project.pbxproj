@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A060D9228FEC290000A933B /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */; };
 		2A0C753828DF3CAC00341121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C753728DF3CAC00341121 /* AppDelegate.swift */; };
 		2A0C753A28DF3CAC00341121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C753928DF3CAC00341121 /* SceneDelegate.swift */; };
 		2A0C753F28DF3CAC00341121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C753D28DF3CAC00341121 /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-3.plist"; sourceTree = "<group>"; };
 		2A0C753428DF3CAC00341121 /* MovieRoomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieRoomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C753728DF3CAC00341121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A0C753928DF3CAC00341121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				2A0C755628DF3ED400341121 /* Scene */,
 				2A0C753D28DF3CAC00341121 /* Main.storyboard */,
 				2A0C754028DF3CAD00341121 /* Assets.xcassets */,
+				2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */,
 				2A0C754228DF3CAD00341121 /* LaunchScreen.storyboard */,
 				2A0C754528DF3CAD00341121 /* Info.plist */,
 			);
@@ -403,8 +406,8 @@
 		2AC4B07A28E88F2600CB9F4F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2AC4B07C28E8901E00CB9F4F /* DetailsController.swift */,
 				2AC4B07E28E8903200CB9F4F /* CollectionHeader */,
+				2AC4B07C28E8901E00CB9F4F /* DetailsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD905B128E46E8F0024376A /* CategoriesCell.xib in Resources */,
+				2A060D9228FEC290000A933B /* GoogleService-Info-3.plist in Resources */,
 				2AC4B08628E96B2F00CB9F4F /* CastCell.xib in Resources */,
 				2A0C754428DF3CAD00341121 /* LaunchScreen.storyboard in Resources */,
 				2A3F0B5628DF4B7100947EE0 /* HeaderCollectionReusableView.xib in Resources */,
