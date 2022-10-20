@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class DetailsController: UIViewController {
     
@@ -26,6 +27,9 @@ class DetailsController: UIViewController {
         collectionViewConfig()
         configurationViewModel()
         collectionView.reloadData()
+        
+        navigationController?.isNavigationBarHidden = false
+
     }
     
     func collectionViewConfig () {
@@ -86,6 +90,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(DetailHeaderCollectionReusableView.self)", for: indexPath) as! DetailHeaderCollectionReusableView
             headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
+            headerView.delegate = self
             
             return headerView
         default:
@@ -93,7 +98,30 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 600)
     }
+    
+    func createFavoriteList(title: String, complete: @escaping(()->())) {
+        let data : [String : Any] = ["title" : title]
+        let collection = Firestore.firestore().collection("MyCollection").document("rFxCHAZhV4Bf9fO0wqEl")
+        collection.updateData(["items" : FieldValue.arrayUnion([data])]) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else {
+                complete()
+            }
+        }
+    }
+}
+
+extension DetailsController : DetailHeaderCollectionViewDelegate{
+    func bookmarkButtonTapped(movieId: Int) {
+        createFavoriteList(title: viewModel.moviesDetails?.originalTitle ?? "") {
+        }
+    }
+
 }

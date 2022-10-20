@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>261913515778-78e84of5637ufh3n5t9b4dp98q081dkg.apps.googleusercontent.com</string>
+	<string>657145474389-9obdbbo3h5eht8u1f3glfght32q2cpvu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.261913515778-78e84of5637ufh3n5t9b4dp98q081dkg</string>
+	<string>com.googleusercontent.apps.657145474389-9obdbbo3h5eht8u1f3glfght32q2cpvu</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBqhF-M3hrwIzRjkleNEPWX4BBqacVQ9vE</string>
+	<string>AIzaSyAhdy1qBip6lc39diIvCe4_eCsLM_AXrE8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>261913515778</string>
+	<string>657145474389</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>Vasif.MovieRoomApp</string>
 	<key>PROJECT_ID</key>
-	<string>movieroomapp</string>
+	<string>movie-room-4cce2</string>
 	<key>STORAGE_BUCKET</key>
-	<string>movieroomapp.appspot.com</string>
+	<string>movie-room-4cce2.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:261913515778:ios:011e03294488b9d571141b</string>
+	<string>1:657145474389:ios:46323215bcf9a2e12a93dc</string>
 </dict>
 </plist>

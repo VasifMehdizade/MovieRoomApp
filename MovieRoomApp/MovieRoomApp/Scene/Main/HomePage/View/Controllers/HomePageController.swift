@@ -23,8 +23,8 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
         registerCollectionView()
         configurationViewModel()
         
-        self.navigationController?.isNavigationBarHidden = true
-        navigationLabel.textColor = UIColor(red: 236, green: 236, blue: 236, alpha: CGFloat(1.0))
+        navigationController?.isNavigationBarHidden = true
+//        navigationLabel.textColor = UIColor(red: 236, green: 236, blue: 236, alpha: CGFloat(100.0))
     }
     
     func registerCell() {

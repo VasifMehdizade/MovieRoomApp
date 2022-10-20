@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i3M-8g-UZL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -267,10 +268,36 @@
                     <view key="view" contentMode="scaleToFill" id="MQT-6W-Ul2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-GG-fK6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OfJ-lY-CGi">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1yv-We-ccw" id="i6n-jp-Dnb"/>
+                                    <outlet property="delegate" destination="1yv-We-ccw" id="JdP-Lc-ZGz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2P7-On-v6M"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2P7-On-v6M" firstAttribute="trailing" secondItem="cPC-GG-fK6" secondAttribute="trailing" id="80e-6d-d3L"/>
+                            <constraint firstItem="cPC-GG-fK6" firstAttribute="leading" secondItem="2P7-On-v6M" secondAttribute="leading" id="BC6-aY-8QU"/>
+                            <constraint firstItem="2P7-On-v6M" firstAttribute="bottom" secondItem="cPC-GG-fK6" secondAttribute="bottom" id="cuk-HB-1Sf"/>
+                            <constraint firstItem="cPC-GG-fK6" firstAttribute="top" secondItem="2P7-On-v6M" secondAttribute="top" id="zQY-W0-Nvk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Watch List" id="Djb-3e-Rbe"/>
+                    <connections>
+                        <outlet property="collectionView" destination="cPC-GG-fK6" id="DDf-UD-08P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7z-Oj-6yi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,6 +327,9 @@
         <image name="Home" width="20" height="22"/>
         <image name="Save" width="22" height="24"/>
         <image name="Search" width="22" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

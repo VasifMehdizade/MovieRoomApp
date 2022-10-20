@@ -32,6 +32,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     func config() {
         configurationViewModel()
+        
+
     }
     
     private func configurationViewModel() {
@@ -62,6 +64,7 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
             let nowPlayingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesCell", for: indexPath) as! MoviesCell
             nowPlayingCell.configure(item: viewModel.moviesInfos[indexPath.item])
             return nowPlayingCell
+            
         } else {
             let categoriesCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
             categoriesCell.categoriesLabel.text = categories[indexPath.row].title

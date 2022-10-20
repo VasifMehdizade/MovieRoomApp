@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A060D9228FEC290000A933B /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */; };
+		2A060D9428FEFBD8000A933B /* WatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A060D9328FEFBD8000A933B /* WatchListViewModel.swift */; };
+		2A060D9628FFE0B8000A933B /* WatchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A060D9528FFE0B8000A933B /* WatchListModel.swift */; };
+		2A0839B92900866200642472 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A0839B82900866200642472 /* GoogleService-Info.plist */; };
+		2A0839BC290091FB00642472 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0839BA290091FB00642472 /* CollectionViewCell.swift */; };
+		2A0839BD290091FB00642472 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A0839BB290091FB00642472 /* CollectionViewCell.xib */; };
 		2A0C753828DF3CAC00341121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C753728DF3CAC00341121 /* AppDelegate.swift */; };
 		2A0C753A28DF3CAC00341121 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0C753928DF3CAC00341121 /* SceneDelegate.swift */; };
 		2A0C753F28DF3CAC00341121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0C753D28DF3CAC00341121 /* Main.storyboard */; };
@@ -61,7 +65,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-3.plist"; sourceTree = "<group>"; };
+		2A060D9328FEFBD8000A933B /* WatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewModel.swift; sourceTree = "<group>"; };
+		2A060D9528FFE0B8000A933B /* WatchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListModel.swift; sourceTree = "<group>"; };
+		2A0839B82900866200642472 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A0839BA290091FB00642472 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2A0839BB290091FB00642472 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		2A0C753428DF3CAC00341121 /* MovieRoomApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieRoomApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0C753728DF3CAC00341121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A0C753928DF3CAC00341121 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +174,7 @@
 				2A0C755628DF3ED400341121 /* Scene */,
 				2A0C753D28DF3CAC00341121 /* Main.storyboard */,
 				2A0C754028DF3CAD00341121 /* Assets.xcassets */,
-				2A060D9128FEC290000A933B /* GoogleService-Info-3.plist */,
+				2A0839B82900866200642472 /* GoogleService-Info.plist */,
 				2A0C754228DF3CAD00341121 /* LaunchScreen.storyboard */,
 				2A0C754528DF3CAD00341121 /* Info.plist */,
 			);
@@ -335,6 +343,7 @@
 		2AADE3E528E1E84B00EAE4C5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2A060D9328FEFBD8000A933B /* WatchListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 		2AADE3E728E1E84B00EAE4C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A060D9528FFE0B8000A933B /* WatchListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,6 +508,8 @@
 			children = (
 				2AC4B0A328F4A31100CB9F4F /* WatchListViewCell.swift */,
 				2AC4B0A428F4A31100CB9F4F /* WatchListViewCell.xib */,
+				2A0839BA290091FB00642472 /* CollectionViewCell.swift */,
+				2A0839BB290091FB00642472 /* CollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -572,10 +584,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AD905B128E46E8F0024376A /* CategoriesCell.xib in Resources */,
-				2A060D9228FEC290000A933B /* GoogleService-Info-3.plist in Resources */,
 				2AC4B08628E96B2F00CB9F4F /* CastCell.xib in Resources */,
 				2A0C754428DF3CAD00341121 /* LaunchScreen.storyboard in Resources */,
 				2A3F0B5628DF4B7100947EE0 /* HeaderCollectionReusableView.xib in Resources */,
+				2A0839B92900866200642472 /* GoogleService-Info.plist in Resources */,
 				2AC4B0A628F4A31100CB9F4F /* WatchListViewCell.xib in Resources */,
 				2A0C754128DF3CAD00341121 /* Assets.xcassets in Resources */,
 				2AC4B08E28E9738800CB9F4F /* CastCollectionViewCell.xib in Resources */,
@@ -585,6 +597,7 @@
 				2AC4B0C128F844B800CB9F4F /* ActorsMoviesCell.xib in Resources */,
 				2AADE3EB28E1E86900EAE4C5 /* SearchViewCell.xib in Resources */,
 				2A0C753F28DF3CAC00341121 /* Main.storyboard in Resources */,
+				2A0839BD290091FB00642472 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,8 +656,11 @@
 				2AC4B0A028E9AC0700CB9F4F /* SimilarMoviesMovies.swift in Sources */,
 				2AADE3EA28E1E86900EAE4C5 /* SearchViewCell.swift in Sources */,
 				2A0C755228DF3DC900341121 /* NetworkHelper.swift in Sources */,
+				2A060D9428FEFBD8000A933B /* WatchListViewModel.swift in Sources */,
 				2A3F0B5528DF4B7100947EE0 /* HeaderCollectionReusableView.swift in Sources */,
+				2A0839BC290091FB00642472 /* CollectionViewCell.swift in Sources */,
 				2AC4B07228E5BA3A00CB9F4F /* WatchListController.swift in Sources */,
+				2A060D9628FFE0B8000A933B /* WatchListModel.swift in Sources */,
 				2AC4B08528E96B2F00CB9F4F /* CastCell.swift in Sources */,
 				2AC4B0A228F17A6700CB9F4F /* VideosModel.swift in Sources */,
 				2A35654328E22650003AE759 /* SearchModel.swift in Sources */,
@@ -828,7 +844,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -858,7 +874,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

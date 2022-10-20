@@ -8,6 +8,10 @@
 import UIKit
 import WebKit
 
+protocol DetailHeaderCollectionViewDelegate {
+    func bookmarkButtonTapped(movieId : Int)
+}
+
 class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
     
     // MARK: IBOutlets
@@ -26,8 +30,14 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         
     var data: Detail?
     
+    var delegate : DetailHeaderCollectionViewDelegate?
+    
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
+    }
+    
+    @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
+        delegate?.bookmarkButtonTapped(movieId: data?.id ?? 0)
     }
     
     func config(data: Detail?, videos: [MovieResults]) {
@@ -40,10 +50,14 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         let a = data?.voteAverage ?? 0
         let y = Double(round(10 * a) / 10)
         imdbLabel.text = "\(y)/10 IMDb"
-        
+
         let urlString = "https://www.youtube.com/watch?v=\(videos.first?.key ?? "")"
         let request = URLRequest(url: URL(string: urlString)!)
         webView.load(request)
+        
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 16
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 }
 
