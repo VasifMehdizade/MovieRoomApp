@@ -37,7 +37,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     }
     
     @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
-        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "", overview: data?.overview ?? "", imdbRatings: data?.imdbID ?? "", image: data?.posterPath ?? "", movieId: data?.id ?? 0))
+        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "", overview: data?.overview ?? "", imdbRatings: data?.voteAverage ?? 0.0, image: data?.posterPath ?? "", movieId: data?.id ?? 0))
     }
     
     func config(data: Detail?, videos: [MovieResults]) {

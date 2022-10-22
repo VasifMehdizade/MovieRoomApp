@@ -270,9 +270,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-GG-fK6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OfJ-lY-CGi">
+                                <rect key="frame" x="10" y="88" width="394" height="725"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OfJ-lY-CGi">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -288,8 +288,8 @@
                         <viewLayoutGuide key="safeArea" id="2P7-On-v6M"/>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="2P7-On-v6M" firstAttribute="trailing" secondItem="cPC-GG-fK6" secondAttribute="trailing" id="80e-6d-d3L"/>
-                            <constraint firstItem="cPC-GG-fK6" firstAttribute="leading" secondItem="2P7-On-v6M" secondAttribute="leading" id="BC6-aY-8QU"/>
+                            <constraint firstItem="2P7-On-v6M" firstAttribute="trailing" secondItem="cPC-GG-fK6" secondAttribute="trailing" constant="10" id="80e-6d-d3L"/>
+                            <constraint firstItem="cPC-GG-fK6" firstAttribute="leading" secondItem="MQT-6W-Ul2" secondAttribute="leading" constant="10" id="BC6-aY-8QU"/>
                             <constraint firstItem="2P7-On-v6M" firstAttribute="bottom" secondItem="cPC-GG-fK6" secondAttribute="bottom" id="cuk-HB-1Sf"/>
                             <constraint firstItem="cPC-GG-fK6" firstAttribute="top" secondItem="2P7-On-v6M" secondAttribute="top" id="zQY-W0-Nvk"/>
                         </constraints>
@@ -327,9 +327,6 @@
         <image name="Home" width="20" height="22"/>
         <image name="Save" width="22" height="24"/>
         <image name="Search" width="22" height="24"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

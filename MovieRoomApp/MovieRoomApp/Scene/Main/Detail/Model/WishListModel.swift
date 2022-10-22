@@ -10,7 +10,7 @@ import Foundation
 struct WishList {
     let title : String
     let overview : String
-    let imdbRatings : String
+    let imdbRatings : Double
     let image : String
     let movieId : Int
 }

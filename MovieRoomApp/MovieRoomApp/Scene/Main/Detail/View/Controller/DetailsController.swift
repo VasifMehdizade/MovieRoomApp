@@ -129,4 +129,3 @@ extension DetailsController : DetailHeaderCollectionViewDelegate{
     }
 
 }
-//createFavoriteList(title: viewModel.moviesDetails?.originalTitle ?? "") {

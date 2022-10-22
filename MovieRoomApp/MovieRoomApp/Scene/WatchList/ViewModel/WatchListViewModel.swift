@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 class WatchListViewModel {
     
-    var items = [MyNews]()
+    var items = [MyList]()
 
     func getMyNews(complete : @escaping(()->())) {
         let db = Firestore.firestore()
@@ -18,7 +18,7 @@ class WatchListViewModel {
         collection.getDocument { snapshot, error in
             if let snapshot = snapshot , snapshot.exists, let data = snapshot.data() {
                 if let data = try? JSONSerialization.data(withJSONObject: data, options: []) {
-                    guard let items = try? JSONDecoder().decode(NewsItems.self, from: data) else {return}
+                    guard let items = try? JSONDecoder().decode(ListItems.self, from: data) else {return}
                     self.items = items.items
                     complete()
                 }
@@ -28,5 +28,3 @@ class WatchListViewModel {
         }
     }
 }
-
-
