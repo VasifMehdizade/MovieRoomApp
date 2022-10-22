@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 protocol DetailHeaderCollectionViewDelegate {
-    func bookmarkButtonTapped(movieId : Int)
+    func bookmarkButtonTapped(info : WishList)
 }
 
 class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
@@ -29,7 +29,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     // MARK: Variables
         
     var data: Detail?
-    
+        
     var delegate : DetailHeaderCollectionViewDelegate?
     
     override func layoutSubviews() {
@@ -37,7 +37,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
     }
     
     @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
-        delegate?.bookmarkButtonTapped(movieId: data?.id ?? 0)
+        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "", overview: data?.overview ?? "", imdbRatings: data?.imdbID ?? "", image: data?.posterPath ?? "", movieId: data?.id ?? 0))
     }
     
     func config(data: Detail?, videos: [MovieResults]) {

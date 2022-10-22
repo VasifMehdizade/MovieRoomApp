@@ -13,4 +13,9 @@ struct NewsItems : Codable {
 
 struct MyNews : Codable{
     let title : String
+    let movieName : String
+    let movieId : String
+    let imdbRatings : String
+    let image : String
+
 }

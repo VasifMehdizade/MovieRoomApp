@@ -13,12 +13,8 @@ class WatchListViewCell: UICollectionViewCell {
     @IBOutlet weak var movieLabel: UILabel!
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var imdbLabel: UILabel!
-    @IBOutlet weak var genreImage: UIImageView!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var yearImage: UIImageView!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var clockImage: UIImageView!
-    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var overview: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

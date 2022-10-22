@@ -104,8 +104,11 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         CGSize(width: collectionView.frame.width, height: 600)
     }
     
-    func createFavoriteList(title: String, complete: @escaping(()->())) {
-        let data : [String : Any] = ["title" : title]
+    func createFavoriteList(info : WishList,  complete: @escaping(()->())) {
+        let data : [String : Any] = ["title" : info.title,
+                                     "overview" : info.overview,
+                                     "imdbRatings" : info.imdbRatings,
+                                     "movieId" : info.movieId]
         let collection = Firestore.firestore().collection("MyCollection").document("rFxCHAZhV4Bf9fO0wqEl")
         collection.updateData(["items" : FieldValue.arrayUnion([data])]) { error in
             if let error = error {
@@ -119,9 +122,11 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension DetailsController : DetailHeaderCollectionViewDelegate{
-    func bookmarkButtonTapped(movieId: Int) {
-        createFavoriteList(title: viewModel.moviesDetails?.originalTitle ?? "") {
-        }
+    func bookmarkButtonTapped(info : WishList) {
+        createFavoriteList(info: info, complete: {
+            
+        })
     }
 
 }
+//createFavoriteList(title: viewModel.moviesDetails?.originalTitle ?? "") {
