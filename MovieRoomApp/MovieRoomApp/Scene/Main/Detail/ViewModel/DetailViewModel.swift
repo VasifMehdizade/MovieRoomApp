@@ -32,8 +32,6 @@ class DetailViewModel {
         }
     }
     
-    
-    
     func movieCast(id : Int) {
         DetailManager.shared.movieCast(id: id) { items, errorMessage in
             if let errorMessage = errorMessage {

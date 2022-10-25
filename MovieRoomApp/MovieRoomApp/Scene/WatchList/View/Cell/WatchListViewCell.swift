@@ -14,10 +14,4 @@ class WatchListViewCell: UICollectionViewCell {
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var imdbLabel: UILabel!
     @IBOutlet weak var overview: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
 }

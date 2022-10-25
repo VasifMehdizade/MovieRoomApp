@@ -13,7 +13,7 @@ class WatchListViewModel {
     
     var items = [MyList]()
 
-    func getMyNews(complete : @escaping(()->())) {
+    func getMyList(complete : @escaping(()->())) {
         let db = Firestore.firestore()
         let collection = db.collection("MyCollection").document("rFxCHAZhV4Bf9fO0wqEl")
         collection.getDocument { snapshot, error in

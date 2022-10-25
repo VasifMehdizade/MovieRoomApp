@@ -16,5 +16,5 @@ struct MyList : Codable{
     let overview : String
     let movieId : Int
     let imdbRatings : Double
-//    let image : String
+    let image : String
 }

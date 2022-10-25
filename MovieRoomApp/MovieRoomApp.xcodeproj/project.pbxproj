@@ -349,8 +349,8 @@
 		2AADE3E628E1E84B00EAE4C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2AD905B428E5B9EC0024376A /* Controllers */,
 				2AD905B528E5B9F60024376A /* Cell */,
+				2AD905B428E5B9EC0024376A /* Controllers */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class WatchListController: UIViewController {
     
@@ -14,10 +15,13 @@ class WatchListController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         registerCell()
         configureNavigation()
-        
-        viewModel.getMyNews {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getMyList {
             self.collectionView.reloadData()
         }
     }
@@ -45,10 +49,10 @@ extension WatchListController : UICollectionViewDelegate, UICollectionViewDataSo
         
         let a = viewModel.items[indexPath.row].imdbRatings
         let y = Double(round(10 * a) / 10)
-
         cell.imdbLabel.text = "\(y)/10 IMDb"
-
+        
         cell.starImage.image = UIImage(named: "Star")
+        cell.movieImage.sd_setImage(with: URL(string: viewModel.items[indexPath.row].image))
         
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 0.5
@@ -56,6 +60,6 @@ extension WatchListController : UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 200)
+        CGSize(width: collectionView.frame.width, height: 220)
     }
 }

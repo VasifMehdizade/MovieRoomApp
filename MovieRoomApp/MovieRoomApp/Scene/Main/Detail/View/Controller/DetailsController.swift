@@ -98,24 +98,23 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         CGSize(width: collectionView.frame.width, height: 600)
     }
     
-    func createFavoriteList(info : WishList,  complete: @escaping(()->())) {
+    func createFavoriteList(info : WishList) {
         let data : [String : Any] = ["title" : info.title,
                                      "overview" : info.overview,
                                      "imdbRatings" : info.imdbRatings,
-                                     "movieId" : info.movieId]
+                                     "movieId" : info.movieId,
+                                     "image" : info.image]
         let collection = Firestore.firestore().collection("MyCollection").document("rFxCHAZhV4Bf9fO0wqEl")
         collection.updateData(["items" : FieldValue.arrayUnion([data])]) { error in
             if let error = error {
                 print(error.localizedDescription)
             }
             else {
-                complete()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -123,9 +122,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
 
 extension DetailsController : DetailHeaderCollectionViewDelegate{
     func bookmarkButtonTapped(info : WishList) {
-        createFavoriteList(info: info, complete: {
-            
-        })
+        createFavoriteList(info: info)
+        
     }
-
 }
