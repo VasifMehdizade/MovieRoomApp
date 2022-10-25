@@ -32,12 +32,25 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         
     var delegate : DetailHeaderCollectionViewDelegate?
     
+    var viewModel = WatchListViewModel()
+
     override func layoutSubviews() {
-        genresCollectionView.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
+        genresCollectionView.register(UINib(nibName: "GenresCell",
+                                            bundle: nil),
+                                      forCellWithReuseIdentifier: "GenresCell")
     }
     
     @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
-        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "", overview: data?.overview ?? "", imdbRatings: data?.voteAverage ?? 0.0, image: data?.posterPath ?? "", movieId: data?.id ?? 0))
+        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "",
+                                                      overview: data?.overview ?? "",
+                                                      imdbRatings: data?.voteAverage ?? 0.0,
+                                                      image: data?.posterPath ?? "",
+                                                      movieId: data?.id ?? 0))
+        
+        viewModel.uploadImage(image: UIImage(named: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")") ?? UIImage(),
+                              name: data?.originalTitle ?? "") {
+            
+        }
     }
     
     func config(data: Detail?, videos: [MovieResults]) {
