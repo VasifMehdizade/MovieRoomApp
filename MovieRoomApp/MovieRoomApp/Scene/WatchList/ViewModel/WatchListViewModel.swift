@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseFirestore
-import FirebaseStorage
 
 class WatchListViewModel {
     
@@ -25,23 +24,6 @@ class WatchListViewModel {
                 }
             } else {
                 print("error")
-            }
-        }
-    }
-    
-    func uploadImage(image: UIImage, name: String, complete: @escaping(()->())) {
-        let ref = Storage.storage().reference()
-        let imageRef = ref.child("\(name).jpg")
-        
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-        
-        let data = image.jpegData(compressionQuality: 0.3) ?? Data()
-        let _ = imageRef.putData(data, metadata: metadata) { _, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                complete()
             }
         }
     }

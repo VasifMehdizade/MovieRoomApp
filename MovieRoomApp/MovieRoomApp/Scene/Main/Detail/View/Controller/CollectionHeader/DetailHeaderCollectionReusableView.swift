@@ -46,7 +46,6 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
                                                       imdbRatings: data?.voteAverage ?? 0.0,
                                                       image: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")",
                                                       movieId: data?.id ?? 0))
-        
     }
     
     func config(data: Detail?, videos: [MovieResults]) {
