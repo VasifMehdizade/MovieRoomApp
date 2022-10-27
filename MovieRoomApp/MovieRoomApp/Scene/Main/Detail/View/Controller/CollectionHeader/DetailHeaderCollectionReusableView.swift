@@ -6,38 +6,48 @@
 //
 
 import UIKit
-import WebKit
+import SDWebImage
 
 protocol DetailHeaderCollectionViewDelegate {
     func bookmarkButtonTapped(info : WishList)
 }
 
-class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate {
+class DetailHeaderCollectionReusableView: UICollectionReusableView {
     
     // MARK: IBOutlets
     
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var bookmarkIcon: UIButton!
     @IBOutlet weak var movieName: UILabel!
-    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var imdbLabel: UILabel!
     @IBOutlet weak var genresCollectionView: UICollectionView!
     @IBOutlet weak var descriptinLabelItself: UILabel!
     @IBOutlet weak var view: UIView!
+        
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var playingButton: UIButton!
     
     // MARK: Variables
         
     var data: Detail?
+    
+    var videos = [MovieResults]()
         
     var delegate : DetailHeaderCollectionViewDelegate?
     
     var viewModel = WatchListViewModel()
+    
+    var sendingMovieTrailing : ((String)->())?
 
     override func layoutSubviews() {
         genresCollectionView.register(UINib(nibName: "GenresCell",
                                             bundle: nil),
                                       forCellWithReuseIdentifier: "GenresCell")
+    }
+    
+    @IBAction func playingButton(_ sender: Any) {
+        sendingMovieTrailing?(videos.first?.key ?? "")
     }
     
     @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
@@ -58,10 +68,8 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView, WKUIDelegate
         let a = data?.voteAverage ?? 0
         let y = Double(round(10 * a) / 10)
         imdbLabel.text = "\(y)/10 IMDb"
-
-        let urlString = "https://www.youtube.com/watch?v=\(videos.first?.key ?? "")"
-        let request = URLRequest(url: URL(string: urlString)!)
-        webView.load(request)
+        posterImageView.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")"))
+        self.videos = videos
         
         view.clipsToBounds = true
         view.layer.cornerRadius = 16

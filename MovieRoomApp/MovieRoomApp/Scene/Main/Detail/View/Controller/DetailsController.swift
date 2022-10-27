@@ -95,6 +95,13 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
             headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
             headerView.delegate = self
             
+            headerView.sendingMovieTrailing = { url in
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "TrailerController") as! TrailerController
+                controller.video = url
+                self.navigationController?.show(controller, sender: nil)
+
+            }
+                
             return headerView
         default:
             assert(false, "Unexpected element kind")
@@ -126,6 +133,5 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
 extension DetailsController : DetailHeaderCollectionViewDelegate{
     func bookmarkButtonTapped(info : WishList) {
         createFavoriteList(info: info)
-        
     }
 }

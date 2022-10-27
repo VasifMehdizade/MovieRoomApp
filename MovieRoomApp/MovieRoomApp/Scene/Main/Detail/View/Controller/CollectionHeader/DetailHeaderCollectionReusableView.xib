@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,14 +14,9 @@
             <rect key="frame" x="0.0" y="0.0" width="317" height="566"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hL3-2B-uRb">
-                    <rect key="frame" x="0.0" y="0.0" width="317" height="204"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <wkWebViewConfiguration key="configuration">
-                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                        <wkPreferences key="preferences"/>
-                    </wkWebViewConfiguration>
-                </wkWebView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W60-4W-ppz">
+                    <rect key="frame" x="0.0" y="0.0" width="317" height="216"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkV-Og-JId">
                     <rect key="frame" x="0.0" y="204" width="317" height="362"/>
                     <subviews>
@@ -111,17 +106,27 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-QV-ivQ">
+                    <rect key="frame" x="130.5" y="90.5" width="56" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                    <connections>
+                        <action selector="playingButton:" destination="Awt-W9-0NO" eventType="touchUpInside" id="Be0-3h-tut"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="tid-nK-K28"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="tid-nK-K28" firstAttribute="trailing" secondItem="hL3-2B-uRb" secondAttribute="trailing" id="2rx-yh-hVz"/>
-                <constraint firstItem="dkV-Og-JId" firstAttribute="top" secondItem="hL3-2B-uRb" secondAttribute="bottom" id="FW9-DV-ffw"/>
-                <constraint firstItem="hL3-2B-uRb" firstAttribute="top" secondItem="Awt-W9-0NO" secondAttribute="top" id="P47-hM-1TL"/>
-                <constraint firstItem="hL3-2B-uRb" firstAttribute="leading" secondItem="tid-nK-K28" secondAttribute="leading" id="RD2-zO-aSh"/>
+                <constraint firstItem="W60-4W-ppz" firstAttribute="height" secondItem="Awt-W9-0NO" secondAttribute="height" multiplier="0.381625" id="7ws-CM-djv"/>
+                <constraint firstItem="W60-4W-ppz" firstAttribute="top" secondItem="Awt-W9-0NO" secondAttribute="top" id="CeN-2v-yr0"/>
+                <constraint firstItem="W60-4W-ppz" firstAttribute="trailing" secondItem="tid-nK-K28" secondAttribute="trailing" id="L0C-lg-Nel"/>
+                <constraint firstItem="Ohf-QV-ivQ" firstAttribute="centerY" secondItem="W60-4W-ppz" secondAttribute="centerY" id="MUa-xy-UiS"/>
                 <constraint firstItem="dkV-Og-JId" firstAttribute="trailing" secondItem="tid-nK-K28" secondAttribute="trailing" id="Ska-Ru-LFW"/>
+                <constraint firstItem="Ohf-QV-ivQ" firstAttribute="centerX" secondItem="W60-4W-ppz" secondAttribute="centerX" id="YjY-3H-6hS"/>
                 <constraint firstItem="dkV-Og-JId" firstAttribute="bottom" secondItem="tid-nK-K28" secondAttribute="bottom" id="ef8-au-C0P"/>
                 <constraint firstItem="dkV-Og-JId" firstAttribute="height" secondItem="Awt-W9-0NO" secondAttribute="height" multiplier="0.639576" id="g0R-uW-AxT"/>
+                <constraint firstItem="W60-4W-ppz" firstAttribute="leading" secondItem="tid-nK-K28" secondAttribute="leading" id="koZ-4a-Ot2"/>
                 <constraint firstItem="dkV-Og-JId" firstAttribute="leading" secondItem="tid-nK-K28" secondAttribute="leading" id="q9M-xY-FMv"/>
             </constraints>
             <connections>
@@ -131,11 +136,12 @@
                 <outlet property="genresCollectionView" destination="nck-qQ-idL" id="qga-fi-sKD"/>
                 <outlet property="imdbLabel" destination="PY4-PO-y2F" id="hQw-ho-yR0"/>
                 <outlet property="movieName" destination="Vsb-cU-awb" id="NaG-9x-VTD"/>
+                <outlet property="playingButton" destination="Ohf-QV-ivQ" id="bwE-8c-8ZJ"/>
+                <outlet property="posterImageView" destination="W60-4W-ppz" id="zoO-zn-82L"/>
                 <outlet property="starImage" destination="Ind-pJ-hrC" id="wuu-RB-8Gy"/>
                 <outlet property="view" destination="dkV-Og-JId" id="0Qd-oD-Auv"/>
-                <outlet property="webView" destination="hL3-2B-uRb" id="8pg-oM-sqa"/>
             </connections>
-            <point key="canvasLocation" x="648.55072463768124" y="104.46428571428571"/>
+            <point key="canvasLocation" x="760" y="40"/>
         </collectionReusableView>
     </objects>
     <resources>

@@ -244,6 +244,40 @@
             </objects>
             <point key="canvasLocation" x="3020" y="-482"/>
         </scene>
+        <!--Trailer Controller-->
+        <scene sceneID="QTO-qr-AKl">
+            <objects>
+                <viewController storyboardIdentifier="TrailerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PLJ-fo-aKE" customClass="TrailerController" customModule="MovieRoomApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNy-UM-nNL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jCa-20-oj9">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0P1-O4-IHg"/>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.16470588235294117" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0P1-O4-IHg" firstAttribute="bottom" secondItem="jCa-20-oj9" secondAttribute="bottom" id="BRq-wT-e86"/>
+                            <constraint firstItem="jCa-20-oj9" firstAttribute="top" secondItem="0P1-O4-IHg" secondAttribute="top" id="UEm-f4-J13"/>
+                            <constraint firstItem="jCa-20-oj9" firstAttribute="leading" secondItem="0P1-O4-IHg" secondAttribute="leading" id="psd-xk-Etr"/>
+                            <constraint firstItem="0P1-O4-IHg" firstAttribute="trailing" secondItem="jCa-20-oj9" secondAttribute="trailing" id="xJy-EZ-K3N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="jCa-20-oj9" id="NKX-UW-Vpm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nah-pp-Vgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3903" y="-482"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="r8k-m5-qmN">
             <objects>
