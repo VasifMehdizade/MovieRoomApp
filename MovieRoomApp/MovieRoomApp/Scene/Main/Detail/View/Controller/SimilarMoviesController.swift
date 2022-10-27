@@ -9,7 +9,7 @@ import UIKit
 
 class SimilarMoviesController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     var viewModel = DetailViewModel()
         

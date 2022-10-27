@@ -17,7 +17,7 @@ class ActorsMoviesController: UIViewController {
         
     // MARK: IBOutlets
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

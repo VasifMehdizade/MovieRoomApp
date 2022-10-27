@@ -14,7 +14,7 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
         
     // MARK: IBOutlets
 
-    @IBOutlet weak var navigationLabel: UILabel!
+    @IBOutlet private weak var navigationLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {

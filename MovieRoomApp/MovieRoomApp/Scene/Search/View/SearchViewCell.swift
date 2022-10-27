@@ -27,4 +27,3 @@ class SearchViewCell: UICollectionViewCell {
     }
 
 }
-

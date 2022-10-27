@@ -12,7 +12,7 @@ class WatchListController: UIViewController {
     
     var viewModel = WatchListViewModel()
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
