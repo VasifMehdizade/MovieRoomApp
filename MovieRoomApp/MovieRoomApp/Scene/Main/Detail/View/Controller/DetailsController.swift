@@ -72,9 +72,12 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             cell.configureCell(data: viewModel.similarMovie, title: "Similar Movies")
             cell.selectionIdCallBack = { item in
-                self.viewModel.movieCast(id: item)
-                self.viewModel.movieDetail(id: item)
-                self.viewModel.similarMovies(id: item)
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "SimilarMoviesController") as! SimilarMoviesController
+                controller.movieId = item
+                self.navigationController?.show(controller, sender: nil)
+//                self.viewModel.movieCast(id: item)
+//                self.viewModel.movieDetail(id: item)
+//                self.viewModel.similarMovies(id: item)
             }
         }
         return cell
