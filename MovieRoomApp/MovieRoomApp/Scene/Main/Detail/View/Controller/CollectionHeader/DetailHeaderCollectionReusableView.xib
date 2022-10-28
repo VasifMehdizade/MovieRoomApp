@@ -107,9 +107,11 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-QV-ivQ">
-                    <rect key="frame" x="130.5" y="90.5" width="56" height="35"/>
+                    <rect key="frame" x="115.5" y="90.5" width="86.5" height="35"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                    <buttonConfiguration key="configuration" style="plain" image="play.rectangle.fill" catalog="system" title="Play">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="playingButton:" destination="Awt-W9-0NO" eventType="touchUpInside" id="Be0-3h-tut"/>
                     </connections>
@@ -146,5 +148,6 @@
     </objects>
     <resources>
         <image name="Save" width="22" height="24"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
     </resources>
 </document>
