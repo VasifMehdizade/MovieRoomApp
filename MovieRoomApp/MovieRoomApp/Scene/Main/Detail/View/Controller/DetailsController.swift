@@ -75,9 +75,6 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "SimilarMoviesController") as! SimilarMoviesController
                 controller.movieId = item
                 self.navigationController?.show(controller, sender: nil)
-//                self.viewModel.movieCast(id: item)
-//                self.viewModel.movieDetail(id: item)
-//                self.viewModel.similarMovies(id: item)
             }
         }
         return cell

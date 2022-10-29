@@ -74,6 +74,7 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "\(HeaderCollectionReusableView.self)", for: indexPath) as! HeaderCollectionReusableView
             headerView.config()
             headerView.categorySelectionCallBack = { genre in
+                self.viewModel.genre = genre
                 self.viewModel.getGenres(genre: genre)
             }
             headerView.selectionIdCallBack = { movieId in
@@ -93,8 +94,12 @@ extension HomePageController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView1: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
-        controller.movieId = viewModel.genreMovies[indexPath.row].id
+        controller.movieId = viewModel.genreMovies[indexPath.row].id ?? 0
         navigationController?.show(controller, sender: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.pagination(index: indexPath.item)
     }
     
 }

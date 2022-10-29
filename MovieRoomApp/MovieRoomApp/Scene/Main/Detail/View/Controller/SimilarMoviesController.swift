@@ -27,7 +27,7 @@ class SimilarMoviesController: UIViewController {
     
     func configurationViewModel() {
         showLoader()
-        viewModel.similarMovies(id: movieId)
+        viewModel.movieDetail(id: movieId)
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}
@@ -45,18 +45,18 @@ class SimilarMoviesController: UIViewController {
 extension SimilarMoviesController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.similarMovie.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WatchListViewCell", for: indexPath) as! WatchListViewCell
         cell.starImage.image = UIImage(named: "Star")
-        cell.movieLabel.text = viewModel.similarMovie[indexPath.row].originalTitle
-        cell.overview.text = viewModel.similarMovie[indexPath.row].overview
-        cell.movieImage.sd_setImage(with: URL(string: viewModel.similarMovie[indexPath.row].image))
+        cell.movieLabel.text = viewModel.moviesDetails?.originalTitle
+        cell.overview.text = viewModel.moviesDetails?.overview
+        cell.movieImage.sd_setImage(with: URL(string: "https://image.tmdb.org/t/p/original\(viewModel.moviesDetails?.posterPath ?? "")"))
 
-        let a = viewModel.similarMovie[indexPath.row].voteAverage
-        let y = Double(round(10 * a) / 10)
+        let a = viewModel.moviesDetails?.voteAverage
+        let y = Double(round(10 * (a ?? 0)) / 10)
         cell.imdbLabel.text = "\(y)/10 IMDb"
                 
         cell.layer.borderColor = UIColor.white.cgColor
@@ -66,7 +66,7 @@ extension SimilarMoviesController : UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "DetailsController") as! DetailsController
-        controller.movieId = viewModel.similarMovie[indexPath.row].id
+        controller.movieId = viewModel.moviesDetails?.id ?? 0
         navigationController?.show(controller, sender: nil)
     }
     

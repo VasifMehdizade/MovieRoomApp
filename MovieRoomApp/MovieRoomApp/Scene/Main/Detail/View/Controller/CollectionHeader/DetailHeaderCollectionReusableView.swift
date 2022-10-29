@@ -38,6 +38,8 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     
     var viewModel = WatchListViewModel()
     
+    var check = false
+    
     var sendingMovieTrailing : ((String)->())?
 
     override func layoutSubviews() {
@@ -50,12 +52,21 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
         sendingMovieTrailing?(videos.first?.key ?? "")
     }
     
-    @IBAction func bookmarkIconButtonTapped(_ sender: Any) {
+    @IBAction func bookmarkIconButtonTapped(_ sender: UIButton) {
         delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "",
                                                       overview: data?.overview ?? "",
                                                       imdbRatings: data?.voteAverage ?? 0.0,
                                                       image: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")",
                                                       movieId: data?.id ?? 0))
+
+         if check == true {
+             bookmarkIcon.setImage(UIImage(named: "bookmark"), for: .normal)
+             check = false
+         } else {
+             bookmarkIcon.setImage(UIImage(named: "bookmarkRed"), for: .normal)
+             check = true
+         }
+        
     }
     
     func config(data: Detail?, videos: [MovieResults]) {

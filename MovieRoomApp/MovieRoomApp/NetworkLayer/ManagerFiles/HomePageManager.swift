@@ -24,8 +24,8 @@ class HomePageManager {
         }
     }
     
-    func getGenres (genres: String, complete: @escaping ((Movies?, String?)->())) {
-        let url = "https://api.themoviedb.org/3/movie/\(genres)?api_key=d8255fdb07be4ce132643e5e155bf54b"
+    func getGenres (genres: String, page : Int, complete: @escaping ((Movies?, String?)->())) {
+        let url = "https://api.themoviedb.org/3/movie/\(genres)?api_key=d8255fdb07be4ce132643e5e155bf54b&page=\(page)"
         NetworkManager.shared.request(type: Movies.self,
                                       url: url,
                                       method: .get) { response in

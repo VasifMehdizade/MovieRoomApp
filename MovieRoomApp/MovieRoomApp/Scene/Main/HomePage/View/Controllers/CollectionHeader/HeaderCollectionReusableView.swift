@@ -84,7 +84,7 @@ extension HeaderCollectionReusableView : UICollectionViewDataSource, UICollectio
         if collectionView == collectionViewCategories {
             categorySelectionCallBack?(categories[indexPath.row].key)
         } else {
-            selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id)
+            selectionIdCallBack?(viewModel.moviesInfos[indexPath.row].id ?? 0)
         }
     }
 }
