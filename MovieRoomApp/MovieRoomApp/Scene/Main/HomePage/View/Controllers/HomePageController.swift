@@ -24,7 +24,6 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
         configurationViewModel()
         
         navigationController?.isNavigationBarHidden = true
-//        navigationLabel.textColor = UIColor(red: 236, green: 236, blue: 236, alpha: CGFloat(100.0))
     }
     
     func registerCell() {

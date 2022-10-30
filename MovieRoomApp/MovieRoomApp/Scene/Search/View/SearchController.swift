@@ -35,8 +35,6 @@ class SearchController: UIViewController {
     }
     
     func configurationViewModel() {
-//        showLoader()
-//        viewModel.getSearchResults(text: String)
         viewModel.errorCallback = { message in
             self.dismissLoader()
             self.showAlert(message: message) {}

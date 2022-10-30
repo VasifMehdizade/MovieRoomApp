@@ -21,9 +21,6 @@ class CastCell: UICollectionViewCell {
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var castImage: UIImageView!
     
-    override func awakeFromNib() {
-    }
-    
     func configureCast (item : TitleImageProtocol) {
         castImage.sd_setImage(with: URL(string: item.image))
         castLabel.text = item.titleText

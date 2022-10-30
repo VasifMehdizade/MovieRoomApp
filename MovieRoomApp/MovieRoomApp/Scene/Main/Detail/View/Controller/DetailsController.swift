@@ -29,7 +29,6 @@ class DetailsController: UIViewController {
         collectionView.reloadData()
         
         navigationController?.isNavigationBarHidden = false
-
     }
     
     func collectionViewConfig () {

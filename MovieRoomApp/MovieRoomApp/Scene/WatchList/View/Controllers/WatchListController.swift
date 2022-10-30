@@ -15,7 +15,6 @@ class WatchListController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         registerCell()
         configureNavigation()
     }

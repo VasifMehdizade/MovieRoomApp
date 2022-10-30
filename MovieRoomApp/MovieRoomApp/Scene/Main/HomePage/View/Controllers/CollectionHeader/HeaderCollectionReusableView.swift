@@ -32,8 +32,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     
     func config() {
         configurationViewModel()
-        
-
     }
     
     private func configurationViewModel() {

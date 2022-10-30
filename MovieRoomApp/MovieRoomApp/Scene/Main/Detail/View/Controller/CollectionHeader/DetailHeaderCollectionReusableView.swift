@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import FirebaseFirestore
 
 protocol DetailHeaderCollectionViewDelegate {
     func bookmarkButtonTapped(info : WishList)
@@ -31,6 +32,8 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     // MARK: Variables
         
     var data: Detail?
+    
+    var save = [MyList]()
     
     var videos = [MovieResults]()
         
@@ -58,7 +61,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
                                                       imdbRatings: data?.voteAverage ?? 0.0,
                                                       image: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")",
                                                       movieId: data?.id ?? 0))
-
+        
          if check == true {
              bookmarkIcon.setImage(UIImage(named: "bookmark"), for: .normal)
              check = false
