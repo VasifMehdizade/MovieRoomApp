@@ -22,7 +22,6 @@ class HomePageController: UIViewController, UITabBarControllerDelegate {
         registerCell()
         registerCollectionView()
         configurationViewModel()
-        
         navigationController?.isNavigationBarHidden = true
     }
     

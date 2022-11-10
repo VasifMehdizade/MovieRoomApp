@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 
+@available(iOS 15.0, *)
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,15 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationBarAppearance.titleTextAttributes = [
-        NSAttributedString.Key.foregroundColor : UIColor.white]
-//        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
-//        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-
-        let tabBarApperance = UITabBarAppearance()
-        tabBarApperance.configureWithOpaqueBackground()
-        tabBarApperance.backgroundColor = UIColor(red: 36, green: 42, blue: 50, alpha: 0)
-        navigationBarAppearance.backgroundColor = UIColor(red: 36, green: 42, blue: 50, alpha: 0)
-        UITabBar.appearance().standardAppearance = tabBarApperance
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+        navigationBarAppearance.backgroundColor = UIColor(red: 36.0/255.0, green: 42.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+    
+    let tabBarApperance = UITabBarAppearance()
+    tabBarApperance.configureWithOpaqueBackground()
+    tabBarApperance.backgroundColor = UIColor(red: 36.0/255.0, green: 42.0/255.0, blue: 50.0/255.0, alpha: 1.0)
+    UITabBar.appearance().scrollEdgeAppearance = tabBarApperance
+    UITabBar.appearance().standardAppearance = tabBarApperance
+        
         return true
     }
     
