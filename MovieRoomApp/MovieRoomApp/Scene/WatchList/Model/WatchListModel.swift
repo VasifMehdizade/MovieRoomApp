@@ -18,3 +18,9 @@ struct MyList : Codable{
     let imdbRatings : Double
     let image : String
 }
+
+struct Model : Codable {
+    let cardId : String
+    let virtual : Bool
+}
+

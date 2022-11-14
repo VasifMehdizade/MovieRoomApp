@@ -11,6 +11,15 @@ import FirebaseFirestore
 class WatchListViewModel {
     
     var items = [MyList]()
+    
+    var jsonModel = [Model]()
+    
+    var array = [Any]()
+    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        jsonSetup()
+//    }
 
     func getMyList(complete : @escaping(()->())) {
         let db = Firestore.firestore()
@@ -24,6 +33,16 @@ class WatchListViewModel {
                 }
             } else {
                 print("error")
+            }
+        }
+    }
+    
+    func jsonSetup() {
+        if let jsonFile = Bundle.main.url(forResource: "File", withExtension: "json"), let data = try? Data(contentsOf: jsonFile) {
+            do {
+                jsonModel = try JSONDecoder().decode([Model].self, from: data)
+            } catch let error {
+                print(String(describing: error))
             }
         }
     }

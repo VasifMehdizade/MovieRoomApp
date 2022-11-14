@@ -10,7 +10,7 @@ import SDWebImage
 import FirebaseFirestore
 
 protocol DetailHeaderCollectionViewDelegate {
-    func bookmarkButtonTapped(info : WishList)
+    func bookmarkButtonTapped(info : SaveList)
 }
 
 class DetailHeaderCollectionReusableView: UICollectionReusableView {
@@ -32,9 +32,7 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     // MARK: Variables
         
     var data: Detail?
-    
-    var save = [MyList]()
-    
+        
     var videos = [MovieResults]()
         
     var delegate : DetailHeaderCollectionViewDelegate?
@@ -42,6 +40,8 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     var viewModel = WatchListViewModel()
     
     var check = false
+    
+    var save = [SaveList]()
     
     var sendingMovieTrailing : ((String)->())?
 
@@ -56,22 +56,22 @@ class DetailHeaderCollectionReusableView: UICollectionReusableView {
     }
     
     @IBAction func bookmarkIconButtonTapped(_ sender: UIButton) {
-        delegate?.bookmarkButtonTapped(info: WishList(title: data?.originalTitle ?? "",
+        delegate?.bookmarkButtonTapped(info: SaveList(title: data?.originalTitle ?? "",
                                                       overview: data?.overview ?? "",
                                                       imdbRatings: data?.voteAverage ?? 0.0,
                                                       image: "https://image.tmdb.org/t/p/original\(data?.posterPath ?? "")",
                                                       movieId: data?.id ?? 0))
         
-         if check == true {
-             bookmarkIcon.setImage(UIImage(named: "bookmark"), for: .normal)
-             check = false
-         } else {
-             bookmarkIcon.setImage(UIImage(named: "bookmarkRed"), for: .normal)
-             check = true
-         }
+//         if check == true {
+//             bookmarkIcon.setImage(UIImage(named: "bookmark"), for: .normal)
+//             check = false
+//         } else {
+//             bookmarkIcon.setImage(UIImage(named: "bookmarkRed"), for: .normal)
+//             check = true
+//         }
         
     }
-    
+
     func config(data: Detail?, videos: [MovieResults]) {
         self.data = data
         movieName.text = data?.originalTitle

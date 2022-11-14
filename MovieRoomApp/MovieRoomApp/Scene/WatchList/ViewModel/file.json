@@ -1,0 +1,15 @@
+[
+    {
+        "cardId": "245",
+        "virtual": true
+    },
+    {
+        "cardId": "243",
+        "virtual": false
+    },
+    {
+        "cardId": "242",
+        "virtual": true
+    }
+]
+

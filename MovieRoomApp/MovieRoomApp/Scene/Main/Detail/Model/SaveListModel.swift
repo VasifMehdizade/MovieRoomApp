@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WishList {
+struct SaveList {
     let title : String
     let overview : String
     let imdbRatings : Double

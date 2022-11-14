@@ -24,7 +24,6 @@ class SearchController: UIViewController {
         configurationViewModel()
         configureNavigation()
         navigationController?.isNavigationBarHidden = false
-
     }
     
     func registerCell() {

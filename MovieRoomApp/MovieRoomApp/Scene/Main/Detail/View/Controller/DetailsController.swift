@@ -91,11 +91,18 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
             headerView.config(data: viewModel.moviesDetails, videos: viewModel.videoItems)
             headerView.delegate = self
             
+            headerView.viewModel.getMyList {
+                for num in headerView.viewModel.items {
+                    if num.movieId == self.movieId {
+                        headerView.bookmarkIcon.setImage(UIImage(named: "bookmarkRed"), for: .normal)
+                    }
+                }
+            }
+            
             headerView.sendingMovieTrailing = { url in
                 let controller = self.storyboard?.instantiateViewController(withIdentifier: "TrailerController") as! TrailerController
                 controller.video = url
                 self.navigationController?.show(controller, sender: nil)
-
             }
                 
             return headerView
@@ -108,7 +115,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
         CGSize(width: collectionView.frame.width, height: 600)
     }
     
-    func createFavoriteList(info : WishList) {
+    func createFavoriteList(info : SaveList) {
         let data : [String : Any] = ["title" : info.title,
                                      "overview" : info.overview,
                                      "imdbRatings" : info.imdbRatings,
@@ -127,7 +134,7 @@ extension DetailsController : UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension DetailsController : DetailHeaderCollectionViewDelegate{
-    func bookmarkButtonTapped(info : WishList) {
+    func bookmarkButtonTapped(info : SaveList) {
         createFavoriteList(info: info)
     }
 }
